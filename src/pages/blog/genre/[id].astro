@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getNovelsByGenre, genres } from '../../data/novels';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getNovelsByGenre, genres } from '../../../data/novels';
 
 export function getStaticPaths() {
   return genres.map(genre => ({
@@ -13,10 +13,12 @@ const { genre } = Astro.props;
 const novels = getNovelsByGenre(genre.name);
 ---
 
-<BaseLayout title={`${genre.name}小说 | AI小说站`}>
+<BaseLayout title={`${genre.name}小说 | 桕树地街`}>
   <div class="container">
     <nav class="breadcrumb">
       <a href="/">首页</a>
+      <span class="sep">/</span>
+      <a href="/blog">博客</a>
       <span class="sep">/</span>
       <span class="current">{genre.name}</span>
     </nav>
@@ -29,7 +31,7 @@ const novels = getNovelsByGenre(genre.name);
     
     <div class="novel-grid">
       {novels.map((novel, index) => (
-        <a href={`/novel/${novel.id}`} class="novel-card" style={`--delay: ${index * 0.08}s`}>
+        <a href={`/blog/novel/${novel.id}`} class="novel-card" style={`--delay: ${index * 0.08}s`}>
           <div class="novel-card-header">
             <span class="novel-genre">{novel.genre}</span>
             <span class="novel-status">{novel.status}</span>

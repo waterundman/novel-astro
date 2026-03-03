@@ -14,20 +14,20 @@ function formatDate(dateStr) {
 }
 ---
 
-<BaseLayout title="AI小说站 | NOVEL.OS">
+<BaseLayout title="桕树地街 | AI小说博客">
   <div class="container">
     <!-- Hero -->
     <section class="hero">
       <div class="hero-content">
         <div class="hero-line"></div>
-        <h1 class="hero-title">AI GENERATED<br/>NOVELS</h1>
-        <p class="hero-desc">智能创作 · 静态生成 · 无限可能</p>
+        <h1 class="hero-title">桕树地街</h1>
+        <p class="hero-desc">AI 创作 · 静态博客 · 探索可能</p>
         <div class="hero-meta">
           <span class="hero-stat">
-            <strong>{novels.length}</strong> 部作品
+            <strong>{posts.length}</strong> 篇博客
           </span>
           <span class="hero-stat">
-            <strong>{authors.length}</strong> 位作者
+            <strong>{novels.length}</strong> 部小说
           </span>
           <span class="hero-stat">
             <strong>{currentYear}.{currentMonth}</strong> 持续更新
@@ -35,17 +35,17 @@ function formatDate(dateStr) {
         </div>
       </div>
     </section>
-    
+
     <!-- Genres -->
     <section class="section">
       <div class="section-header">
-        <h2 class="section-title">分类</h2>
+        <h2 class="section-title">小说分类</h2>
         <div class="section-line"></div>
       </div>
       
       <div class="genre-grid">
         {genres.map((genre, index) => (
-          <a href={`/genre/${genre.name}`} class="genre-card" style={`--delay: ${index * 0.05}s`}>
+          <a href={`/blog/genre/${genre.name}`} class="genre-card" style={`--delay: ${index * 0.05}s`}>
             <span class="genre-name">{genre.name}</span>
             <span class="genre-count">{genre.count}</span>
           </a>
@@ -56,13 +56,13 @@ function formatDate(dateStr) {
     <!-- Novels -->
     <section class="section">
       <div class="section-header">
-        <h2 class="section-title">最新连载</h2>
+        <h2 class="section-title">最新小说</h2>
         <div class="section-line"></div>
       </div>
       
       <div class="novel-grid">
         {novels.map((novel, index) => (
-          <a href={`/novel/${novel.id}`} class="novel-card" style={`--delay: ${index * 0.08}s`}>
+          <a href={`/blog/novel/${novel.id}`} class="novel-card" style={`--delay: ${index * 0.08}s`}>
             <div class="novel-card-header">
               <span class="novel-genre">{novel.genre}</span>
               <span class="novel-status">{novel.status}</span>
@@ -143,8 +143,8 @@ function formatDate(dateStr) {
     <section class="section about-section">
       <div class="about-content">
         <div class="about-line"></div>
-        <h3>关于 NOVEL.OS</h3>
-        <p>基于AI大语言模型生成的智能小说平台。每本小说都由AI创作，每位"作者"都有独特的更新规律和写作风格。</p>
+        <h3>关于 桕树地街</h3>
+        <p>一个实验性的 AI 小说与博客平台。探索人类与 AI 在创作中的协作可能。</p>
         <div class="about-features">
           <div class="about-feature">
             <span class="feature-icon">⟡</span>

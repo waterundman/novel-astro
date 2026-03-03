@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getNovelById, getChaptersByNovelId, getAuthorById, novels } from '../../data/novels';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getNovelById, getChaptersByNovelId, getAuthorById, novels } from '../../../data/novels';
 
 export function getStaticPaths() {
   return novels.map(novel => ({
@@ -20,12 +20,14 @@ function formatDate(dateStr) {
 }
 ---
 
-<BaseLayout title={`${novel.title} | AI小说站`}>
+<BaseLayout title={`${novel.title} | 桕树地街`}>
   <div class="container">
     <nav class="breadcrumb">
       <a href="/">首页</a>
       <span class="sep">/</span>
-      <a href={`/genre/${novel.genre}`}>{novel.genre}</a>
+      <a href="/blog">博客</a>
+      <span class="sep">/</span>
+      <a href="/blog/genre/{novel.genre}">{novel.genre}</a>
       <span class="sep">/</span>
       <span class="current">{novel.title}</span>
     </nav>
@@ -98,7 +100,7 @@ function formatDate(dateStr) {
           
           <div class="chapter-list">
             {chapters.map((chapter, index) => (
-              <a href={`/novel/${novel.id}/${chapter.id}`} class="chapter-item">
+              <a href={`/blog/novel/${novel.id}/${chapter.id}`} class="chapter-item">
                 <span class="chapter-num">第{chapter.number}章</span>
                 <span class="chapter-title">{chapter.title}</span>
                 <span class="chapter-info">

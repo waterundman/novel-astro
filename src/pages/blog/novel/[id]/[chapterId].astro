@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { getNovelById, getChaptersByNovelId, novels, chapters as allChapters } from '../../../data/novels';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { getNovelById, getChaptersByNovelId, novels, chapters as allChapters } from '../../../../data/novels';
 
 export function getStaticPaths() {
   const paths = [];
@@ -41,9 +41,9 @@ function formatContent(content) {
     <nav class="breadcrumb">
       <a href="/">首页</a>
       <span class="sep">/</span>
-      <a href={`/genre/${novel.genre}`}>{novel.genre}</a>
+      <a href="/blog">博客</a>
       <span class="sep">/</span>
-      <a href={`/novel/${novel.id}`}>{novel.title}</a>
+      <a href={`/blog/novel/${novel.id}`}>{novel.title}</a>
       <span class="sep">/</span>
       <span class="current">第{chapter.number}章</span>
     </nav>
@@ -72,7 +72,7 @@ function formatContent(content) {
       <footer class="chapter-footer">
         <div class="chapter-nav">
           {prevChapter ? (
-            <a href={`/novel/${novel.id}/${prevChapter.id}`} class="nav-btn prev">
+            <a href={`/blog/novel/${novel.id}/${prevChapter.id}`} class="nav-btn prev">
               <span class="nav-icon">←</span>
               <span class="nav-text">
                 <small>上一章</small>
@@ -84,7 +84,7 @@ function formatContent(content) {
           )}
           
           {nextChapter ? (
-            <a href={`/novel/${novel.id}/${nextChapter.id}`} class="nav-btn next">
+            <a href={`/blog/novel/${novel.id}/${nextChapter.id}`} class="nav-btn next">
               <span class="nav-text">
                 <small>下一章</small>
                 <strong>{nextChapter.title}</strong>
@@ -97,7 +97,7 @@ function formatContent(content) {
         </div>
         
         <div class="back-to-top">
-          <a href={`/novel/${novel.id}`} class="back-link">
+          <a href={`/blog/novel/${novel.id}`} class="back-link">
             ← 返回目录
           </a>
         </div>
