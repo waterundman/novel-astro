@@ -1,0 +1,406 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getNovelById, getChaptersByNovelId, getAuthorById, novels } from '../../data/novels';
+
+export function getStaticPaths() {
+  return novels.map(novel => ({
+    params: { id: novel.id },
+    props: { novel }
+  }));
+}
+
+const { novel } = Astro.props;
+const chapters = getChaptersByNovelId(novel.id);
+const author = getAuthorById(novel.authorId);
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' });
+}
+---
+
+<BaseLayout title={`${novel.title} | AI小说站`}>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="sep">/</span>
+      <a href={`/genre/${novel.genre}`}>{novel.genre}</a>
+      <span class="sep">/</span>
+      <span class="current">{novel.title}</span>
+    </nav>
+    
+    <article class="novel-detail">
+      <header class="novel-header">
+        <div class="novel-header-line"></div>
+        
+        <h1 class="novel-title">{novel.title}</h1>
+        
+        <div class="novel-meta">
+          <a href={`/author/${author?.id}`} class="novel-author">
+            <span class="author-avatar">{author?.avatar || 'A'}</span>
+            <span>{novel.authorName}</span>
+          </a>
+          <span class="novel-status">{novel.status}</span>
+          <span class="novel-genre">{novel.genre}</span>
+        </div>
+        
+        <div class="novel-tags">
+          {novel.tags.map(tag => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      </header>
+      
+      <div class="novel-content-wrapper">
+        <section class="novel-intro-section">
+          <h3 class="section-label">
+            <span class="label-line"></span>
+            简介
+          </h3>
+          <p class="novel-intro">{novel.intro}</p>
+          
+          <div class="novel-stats">
+            <div class="stat-item">
+              <span class="stat-value">{chapters.length}</span>
+              <span class="stat-label">章节</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">{chapters.reduce((sum, c) => sum + (c.wordCount || 0), 0)}</span>
+              <span class="stat-label">字数</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">{formatDate(novel.lastUpdate)}</span>
+              <span class="stat-label">更新</span>
+            </div>
+          </div>
+          
+          {author && (
+            <div class="author-card">
+              <div class="author-card-header">
+                <span class="author-card-avatar">{author.avatar}</span>
+                <div class="author-card-info">
+                  <span class="author-card-name">{author.name}</span>
+                  <span class="author-card-type">{author.personality}</span>
+                </div>
+              </div>
+              <p class="author-card-desc">{author.desc}</p>
+              <p class="author-card-next">下次更新: {author.nextUpdate}</p>
+            </div>
+          )}
+        </section>
+        
+        <section class="chapter-section">
+          <h3 class="section-label">
+            <span class="label-line"></span>
+            目录 <span class="chapter-count">共{chapters.length}章</span>
+          </h3>
+          
+          <div class="chapter-list">
+            {chapters.map((chapter, index) => (
+              <a href={`/novel/${novel.id}/${chapter.id}`} class="chapter-item">
+                <span class="chapter-num">第{chapter.number}章</span>
+                <span class="chapter-title">{chapter.title}</span>
+                <span class="chapter-info">
+                  <span class="chapter-word">{chapter.wordCount}字</span>
+                  <span class="chapter-date">{formatDate(chapter.publishedAt)}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-lighter);
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .breadcrumb a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .breadcrumb a:hover {
+    color: var(--text);
+  }
+  
+  .sep {
+    color: var(--border);
+  }
+  
+  .current {
+    color: var(--text);
+  }
+  
+  /* Novel Header */
+  .novel-header {
+    margin-bottom: 48px;
+  }
+  
+  .novel-header-line {
+    width: 60px;
+    height: 3px;
+    background: var(--line);
+    margin-bottom: 24px;
+  }
+  
+  .novel-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .novel-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .novel-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+  
+  .author-avatar {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--line);
+    color: var(--bg-card);
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  
+  .novel-status {
+    font-size: 0.8rem;
+    color: var(--success);
+    font-family: var(--font-mono);
+  }
+  
+  .novel-genre {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+  }
+  
+  .novel-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    background: var(--accent-dim);
+    color: var(--text-light);
+    font-family: var(--font-mono);
+  }
+  
+  /* Content Wrapper */
+  .novel-content-wrapper {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 48px;
+  }
+  
+  /* Intro Section */
+  .novel-intro-section {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
+  
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+  }
+  
+  .label-line {
+    width: 20px;
+    height: 2px;
+    background: var(--line);
+  }
+  
+  .chapter-count {
+    color: var(--text-lighter);
+    font-weight: normal;
+    letter-spacing: 0;
+  }
+  
+  .novel-intro {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .novel-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-value {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text);
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--text-lighter);
+    font-family: var(--font-mono);
+  }
+  
+  /* Author Card */
+  .author-card {
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+  
+  .author-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .author-card-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--line);
+    color: var(--bg-card);
+    font-family: var(--font-mono);
+    font-weight: bold;
+  }
+  
+  .author-card-name {
+    display: block;
+    font-weight: 600;
+  }
+  
+  .author-card-type {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+  }
+  
+  .author-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 8px;
+  }
+  
+  .author-card-next {
+    font-size: 0.75rem;
+    color: var(--text-lighter);
+    font-family: var(--font-mono);
+  }
+  
+  /* Chapter Section */
+  .chapter-section {
+    min-height: 400px;
+  }
+  
+  .chapter-list {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+  
+  .chapter-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  
+  .chapter-item:last-child {
+    border-bottom: none;
+  }
+  
+  .chapter-item:hover {
+    background: var(--accent-dim);
+    padding-left: 24px;
+  }
+  
+  .chapter-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+    width: 60px;
+  }
+  
+  .chapter-title {
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+  
+  .chapter-info {
+    display: flex;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-lighter);
+  }
+  
+  @media (max-width: 900px) {
+    .novel-content-wrapper {
+      grid-template-columns: 1fr;
+    }
+    
+    .novel-intro-section {
+      position: static;
+    }
+    
+    .novel-title {
+      font-size: 1.6rem;
+    }
+  }
+</style>

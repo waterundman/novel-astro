@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getLatestPosts, categories, getAllTags } from '../../data/posts';
+
+const posts = getLatestPosts();
+const tags = getAllTags();
+
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+---
+
+<BaseLayout title="博客 | NOVEL.OS">
+  <div class="container">
+    <header class="page-header">
+      <div class="page-header-line"></div>
+      <h1 class="page-title">WRITING</h1>
+      <p class="page-desc">记录思考 · 分享技术 · 书写生活</p>
+    </header>
+    
+    <div class="blog-layout">
+      <!-- Main Content -->
+      <main class="blog-main">
+        <section class="posts-section">
+          <h2 class="section-title">
+            <span class="title-line"></span>
+            最新文章
+          </h2>
+          
+          <div class="posts-list">
+            {posts.map((post, index) => (
+              <article class="post-card" style={`--delay: ${index * 0.1}s`}>
+                <div class="post-meta">
+                  <time class="post-date">{formatDate(post.date)}</time>
+                  <span class="post-category">{post.category}</span>
+                </div>
+                
+                <a href={`/blog/${post.id}`} class="post-title-link">
+                  <h3 class="post-title">{post.title}</h3>
+                </a>
+                
+                <p class="post-excerpt">{post.excerpt}</p>
+                
+                <div class="post-tags">
+                  {post.tags.map(tag => (
+                    <span class="post-tag">{tag}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+      
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <!-- Categories -->
+        <div class="sidebar-block">
+          <h4 class="sidebar-title">
+            <span class="title-line"></span>
+            分类
+          </h4>
+          <ul class="category-list">
+            {categories.map(cat => (
+              <li>
+                <a href={`/blog/category/${cat.name}`} class="category-item">
+                  <span class="category-name">{cat.name}</span>
+                  <span class="category-count">{cat.count}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <!-- Tags -->
+        <div class="sidebar-block">
+          <h4 class="sidebar-title">
+            <span class="title-line"></span>
+            标签
+          </h4>
+          <div class="tag-cloud">
+            {tags.map(tag => (
+              <a href={`/blog/tag/${tag}`} class="tag-item">{tag}</a>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Info -->
+        <div class="sidebar-block info-block">
+          <div class="info-line"></div>
+          <p class="info-text">
+            这里记录的是我对技术、设计和生活的思考。<br/><br/>
+            部分内容由 AI 辅助完成。
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    margin-bottom: 48px;
+  }
+  
+  .page-header-line {
+    width: 60px;
+    height: 3px;
+    background: var(--line);
+    margin-bottom: 20px;
+  }
+  
+  .page-title {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .page-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+  }
+  
+  /* Blog Layout */
+  .blog-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 48px;
+  }
+  
+  /* Section Title */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+    font-family: var(--font-mono);
+  }
+  
+  .title-line {
+    width: 20px;
+    height: 2px;
+    background: var(--line);
+  }
+  
+  /* Posts List */
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .post-card {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    animation: fadeIn 0.5s ease-out var(--delay) both;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .post-card:hover {
+    border-color: var(--line);
+    box-shadow: 4px 4px 0 var(--line);
+    transform: translate(-2px, -2px);
+  }
+  
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .post-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+  }
+  
+  .post-category {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+  }
+  
+  .post-title-link {
+    text-decoration: none;
+  }
+  
+  .post-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    transition: color 0.2s;
+  }
+  
+  .post-title-link:hover .post-title {
+    color: var(--accent);
+  }
+  
+  .post-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  
+  .post-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .post-tag {
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    background: var(--accent-dim);
+    color: var(--text-light);
+    font-family: var(--font-mono);
+  }
+  
+  /* Sidebar */
+  .blog-sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
+  
+  .sidebar-block {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .sidebar-block:last-child {
+    border-bottom: none;
+  }
+  
+  .sidebar-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+  }
+  
+  .category-list {
+    list-style: none;
+  }
+  
+  .category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .category-item:hover {
+    color: var(--text);
+    border-bottom-color: var(--line);
+  }
+  
+  .category-count {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+  }
+  
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .tag-item {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text-light);
+    transition: all 0.2s;
+  }
+  
+  .tag-item:hover {
+    border-color: var(--line);
+    color: var(--text);
+  }
+  
+  .info-block {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .info-line {
+    width: 30px;
+    height: 2px;
+    background: var(--line);
+    margin-bottom: 12px;
+  }
+  
+  .info-text {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  
+  @media (max-width: 900px) {
+    .blog-layout {
+      grid-template-columns: 1fr;
+    }
+    
+    .blog-sidebar {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    
+    .sidebar-block {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .blog-sidebar {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

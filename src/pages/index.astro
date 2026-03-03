@@ -1,0 +1,593 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLatestNovels, authors, genres } from '../data/novels';
+import { getLatestPosts } from '../data/posts';
+
+const novels = getLatestNovels(6);
+const posts = getLatestPosts(3);
+const currentYear = new Date().getFullYear();
+const currentMonth = new Date().getMonth() + 1;
+
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' });
+}
+---
+
+<BaseLayout title="AI小说站 | NOVEL.OS">
+  <div class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-line"></div>
+        <h1 class="hero-title">AI GENERATED<br/>NOVELS</h1>
+        <p class="hero-desc">智能创作 · 静态生成 · 无限可能</p>
+        <div class="hero-meta">
+          <span class="hero-stat">
+            <strong>{novels.length}</strong> 部作品
+          </span>
+          <span class="hero-stat">
+            <strong>{authors.length}</strong> 位作者
+          </span>
+          <span class="hero-stat">
+            <strong>{currentYear}.{currentMonth}</strong> 持续更新
+          </span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Genres -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">分类</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="genre-grid">
+        {genres.map((genre, index) => (
+          <a href={`/genre/${genre.name}`} class="genre-card" style={`--delay: ${index * 0.05}s`}>
+            <span class="genre-name">{genre.name}</span>
+            <span class="genre-count">{genre.count}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+    
+    <!-- Novels -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">最新连载</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="novel-grid">
+        {novels.map((novel, index) => (
+          <a href={`/novel/${novel.id}`} class="novel-card" style={`--delay: ${index * 0.08}s`}>
+            <div class="novel-card-header">
+              <span class="novel-genre">{novel.genre}</span>
+              <span class="novel-status">{novel.status}</span>
+            </div>
+            
+            <h3 class="novel-title">{novel.title}</h3>
+            
+            <p class="novel-intro">{novel.intro}</p>
+            
+            <div class="novel-meta">
+              <span class="novel-author">{novel.authorName}</span>
+              <span class="novel-chapters">{novel.totalChapters}章</span>
+            </div>
+            
+            <div class="novel-tags">
+              {novel.tags.slice(0, 2).map(tag => (
+                <span class="novel-tag">{tag}</span>
+              ))}
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+    
+    <!-- Authors -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">作者动态</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="author-grid">
+        {authors.map((author, index) => (
+          <div class="author-card" style={`--delay: ${index * 0.1}s`}>
+            <div class="author-avatar">{author.avatar}</div>
+            <div class="author-info">
+              <h4 class="author-name">{author.name}</h4>
+              <p class="author-type">{author.personality}</p>
+              <p class="author-desc">{author.desc}</p>
+              <p class="author-next">下次更新: {author.nextUpdate}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    
+    <!-- Blog Posts -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">最新博客</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="blog-grid">
+        {posts.map((post, index) => (
+          <a href={`/blog/${post.id}`} class="blog-card" style={`--delay: ${index * 0.1}s`}>
+            <div class="blog-card-header">
+              <span class="blog-date">{formatDate(post.date)}</span>
+              <span class="blog-category">{post.category}</span>
+            </div>
+            <h3 class="blog-title">{post.title}</h3>
+            <p class="blog-excerpt">{post.excerpt}</p>
+            <div class="blog-tags">
+              {post.tags.slice(0, 2).map(tag => (
+                <span class="blog-tag">{tag}</span>
+              ))}
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <div class="more-link">
+        <a href="/blog">查看更多博客 →</a>
+      </div>
+    </section>
+    
+    <!-- About -->
+    <section class="section about-section">
+      <div class="about-content">
+        <div class="about-line"></div>
+        <h3>关于 NOVEL.OS</h3>
+        <p>基于AI大语言模型生成的智能小说平台。每本小说都由AI创作，每位"作者"都有独特的更新规律和写作风格。</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <span class="feature-icon">⟡</span>
+            <span>静态生成</span>
+          </div>
+          <div class="about-feature">
+            <span class="feature-icon">∞</span>
+            <span>无限内容</span>
+          </div>
+          <div class="about-feature">
+            <span class="feature-icon">⚡</span>
+            <span>低功耗</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-line {
+    width: 2px;
+    height: 60px;
+    background: var(--line);
+    margin-bottom: 32px;
+  }
+  
+  .hero-title {
+    font-family: var(--font-mono);
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  
+  .hero-desc {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-meta {
+    display: flex;
+    gap: 48px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-lighter);
+  }
+  
+  .hero-stat strong {
+    color: var(--text);
+    font-size: 1.2rem;
+    display: block;
+  }
+  
+  /* Section */
+  .section {
+    margin-bottom: 64px;
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .section-title {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    white-space: nowrap;
+  }
+  
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    position: relative;
+  }
+  
+  .section-line::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -2px;
+    width: 8px;
+    height: 4px;
+    background: var(--line);
+  }
+  
+  /* Genre Grid */
+  .genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+  }
+  
+  .genre-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.2s;
+    animation: fadeIn 0.5s ease-out var(--delay) both;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .genre-card:hover {
+    border-color: var(--line);
+    transform: translateX(4px);
+  }
+  
+  .genre-name {
+    font-size: 0.95rem;
+  }
+  
+  .genre-count {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+  }
+  
+  /* Novel Grid */
+  .novel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  
+  .novel-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.25s;
+    animation: fadeIn 0.5s ease-out var(--delay) both;
+  }
+  
+  .novel-card:hover {
+    border-color: var(--line);
+    box-shadow: 4px 4px 0 var(--line);
+    transform: translate(-2px, -2px);
+  }
+  
+  .novel-card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  
+  .novel-genre {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+  
+  .novel-status {
+    font-size: 0.75rem;
+    color: var(--success);
+  }
+  
+  .novel-title {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  
+  .novel-intro {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  
+  .novel-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 12px;
+  }
+  
+  .novel-author {
+    font-family: var(--font-mono);
+  }
+  
+  .novel-tags {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .novel-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    background: var(--accent-dim);
+    color: var(--text-light);
+    font-family: var(--font-mono);
+  }
+  
+  /* Author Grid */
+  .author-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .author-card {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    animation: fadeIn 0.5s ease-out var(--delay) both;
+  }
+  
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--line);
+    color: var(--bg-card);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .author-info {
+    flex: 1;
+  }
+  
+  .author-name {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  
+  .author-type {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  
+  .author-desc {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 4px;
+  }
+  
+  .author-next {
+    font-size: 0.75rem;
+    color: var(--text-lighter);
+    font-family: var(--font-mono);
+  }
+  
+  /* Blog Grid */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.25s;
+    animation: fadeIn 0.5s ease-out var(--delay) both;
+  }
+  
+  .blog-card:hover {
+    border-color: var(--line);
+    box-shadow: 4px 4px 0 var(--line);
+    transform: translate(-2px, -2px);
+  }
+  
+  .blog-card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  
+  .blog-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+  }
+  
+  .blog-category {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+  
+  .blog-title {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  
+  .blog-excerpt {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  
+  .blog-tags {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .blog-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    background: var(--accent-dim);
+    color: var(--text-light);
+    font-family: var(--font-mono);
+  }
+  
+  .more-link {
+    text-align: center;
+    margin-top: 24px;
+  }
+  
+  .more-link a {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .more-link a:hover {
+    color: var(--text);
+  }
+  
+  /* About */
+  .about-section {
+    padding: 48px 0;
+  }
+  
+  .about-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-line {
+    width: 40px;
+    height: 2px;
+    background: var(--line);
+    margin: 0 auto 24px;
+  }
+  
+  .about-content h3 {
+    font-family: var(--font-mono);
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+  }
+  
+  .about-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+  
+  .about-features {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+  }
+  
+  .about-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+  }
+  
+  .feature-icon {
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+      letter-spacing: 4px;
+    }
+    
+    .hero-meta {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .novel-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

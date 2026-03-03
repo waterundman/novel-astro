@@ -1,0 +1,233 @@
+---
+const { title = 'AI小说站' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content="AI智能小说创作平台 - 静态博客融合小说站">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">
+        <span class="logo-icon">━</span>
+        <span class="logo-text">NOVEL.OS</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="/">首页</a>
+        <a href="/novel/xinghe-dadi">小说</a>
+        <a href="/blog">博客</a>
+        <a href="/about">关于</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="main">
+    <slot />
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-line"></div>
+      <p>© 2026 NOVEL.OS — AI Generated Content</p>
+      <p class="footer-note">∞ 由AI驱动 · 静态生成 · 低功耗运行</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style is:global>
+  :root {
+    --bg: #f8f9fa;
+    --bg-card: #ffffff;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --text-lighter: #b2bec3;
+    --border: #dfe6e9;
+    --line: #2d3436;
+    --accent: #74b9ff;
+    --accent-dim: rgba(116, 185, 255, 0.15);
+    --success: #00b894;
+    --warning: #fdcb6e;
+    --danger: #ff7675;
+    
+    --font-cn: 'Noto Serif SC', 'Source Han Serif SC', serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: var(--font-cn);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+  }
+  
+  body {
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .grid-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: 
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.5;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* Header */
+  .header {
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+  
+  .logo-icon {
+    font-size: 1.5rem;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  
+  .nav {
+    display: flex;
+    gap: 32px;
+  }
+  
+  .nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  
+  .nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--line);
+    transition: width 0.3s;
+  }
+  
+  .nav a:hover {
+    color: var(--text);
+  }
+  
+  .nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* Main */
+  .main {
+    padding: 48px 0;
+    min-height: calc(100vh - 200px);
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 32px 0;
+    text-align: center;
+    color: var(--text-lighter);
+    font-size: 0.85rem;
+  }
+  
+  .footer-line {
+    width: 60px;
+    height: 2px;
+    background: var(--line);
+    margin: 0 auto 16px;
+  }
+  
+  .footer-note {
+    margin-top: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+  
+  /* Common */
+  a {
+    color: inherit;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .header .container {
+      flex-direction: column;
+      height: auto;
+      padding: 16px 24px;
+      gap: 12px;
+    }
+    
+    .nav {
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .main {
+      padding: 32px 0;
+    }
+  }
+</style>

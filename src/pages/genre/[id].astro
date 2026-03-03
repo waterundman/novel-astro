@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getNovelsByGenre, genres } from '../../data/novels';
+
+export function getStaticPaths() {
+  return genres.map(genre => ({
+    params: { id: genre.name },
+    props: { genre }
+  }));
+}
+
+const { genre } = Astro.props;
+const novels = getNovelsByGenre(genre.name);
+---
+
+<BaseLayout title={`${genre.name}小说 | AI小说站`}>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="sep">/</span>
+      <span class="current">{genre.name}</span>
+    </nav>
+    
+    <header class="page-header">
+      <div class="page-header-line"></div>
+      <h1 class="page-title">{genre.name}</h1>
+      <p class="page-desc">共 {novels.length} 部作品</p>
+    </header>
+    
+    <div class="novel-grid">
+      {novels.map((novel, index) => (
+        <a href={`/novel/${novel.id}`} class="novel-card" style={`--delay: ${index * 0.08}s`}>
+          <div class="novel-card-header">
+            <span class="novel-genre">{novel.genre}</span>
+            <span class="novel-status">{novel.status}</span>
+          </div>
+          
+          <h3 class="novel-title">{novel.title}</h3>
+          
+          <p class="novel-intro">{novel.intro}</p>
+          
+          <div class="novel-meta">
+            <span class="novel-author">{novel.authorName}</span>
+            <span class="novel-chapters">{novel.totalChapters}章</span>
+          </div>
+        </a>
+      ))}
+    </div>
+    
+    {novels.length === 0 && (
+      <div class="empty-state">
+        <div class="empty-icon">━</div>
+        <p>暂无{genre.name}分类小说</p>
+      </div>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-lighter);
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .breadcrumb a {
+    color: var(--text-light);
+    text-decoration: none;
+  }
+  
+  .sep {
+    color: var(--border);
+  }
+  
+  .current {
+    color: var(--text);
+  }
+  
+  /* Page Header */
+  .page-header {
+    margin-bottom: 48px;
+  }
+  
+  .page-header-line {
+    width: 60px;
+    height: 3px;
+    background: var(--line);
+    margin-bottom: 20px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+  
+  .page-desc {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-lighter);
+  }
+  
+  /* Novel Grid */
+  .novel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  
+  .novel-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.25s;
+    animation: fadeIn 0.5s ease-out var(--delay) both;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .novel-card:hover {
+    border-color: var(--line);
+    box-shadow: 4px 4px 0 var(--line);
+    transform: translate(-2px, -2px);
+  }
+  
+  .novel-card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  
+  .novel-genre {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+  
+  .novel-status {
+    font-size: 0.75rem;
+    color: var(--success);
+  }
+  
+  .novel-title {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  
+  .novel-intro {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  
+  .novel-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+  
+  .novel-author {
+    font-family: var(--font-mono);
+  }
+  
+  /* Empty */
+  .empty-state {
+    text-align: center;
+    padding: 80px 0;
+    color: var(--text-lighter);
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    opacity: 0.3;
+  }
+</style>

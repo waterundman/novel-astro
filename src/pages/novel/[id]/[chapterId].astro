@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getNovelById, getChaptersByNovelId, novels, chapters as allChapters } from '../../../data/novels';
+
+export function getStaticPaths() {
+  const paths = [];
+  
+  for (const novel of novels) {
+    const novelChapters = allChapters[novel.id] || [];
+    for (const chapter of novelChapters) {
+      paths.push({
+        params: { id: novel.id, chapterId: chapter.id },
+        props: { novel, chapter }
+      });
+    }
+  }
+  
+  return paths;
+}
+
+const { novel, chapter } = Astro.props;
+const chapters = getChaptersByNovelId(novel.id);
+const currentIndex = chapters.findIndex(c => c.id === chapter.id);
+const prevChapter = currentIndex > 0 ? chapters[currentIndex - 1] : null;
+const nextChapter = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' });
+}
+
+function formatContent(content) {
+  if (!content) return [];
+  return content.split('\n\n').filter(p => p.trim());
+}
+---
+
+<BaseLayout title={`第${chapter.number}章 ${chapter.title} | ${novel.title}`}>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="sep">/</span>
+      <a href={`/genre/${novel.genre}`}>{novel.genre}</a>
+      <span class="sep">/</span>
+      <a href={`/novel/${novel.id}`}>{novel.title}</a>
+      <span class="sep">/</span>
+      <span class="current">第{chapter.number}章</span>
+    </nav>
+    
+    <article class="chapter-content">
+      <header class="chapter-header">
+        <div class="chapter-header-line"></div>
+        
+        <h1 class="chapter-title">
+          <span class="chapter-num">第{chapter.number}章</span>
+          <span class="chapter-name">{chapter.title}</span>
+        </h1>
+        
+        <div class="chapter-meta">
+          <span class="chapter-word">{chapter.wordCount}字</span>
+          <span class="chapter-date">{formatDate(chapter.publishedAt)}</span>
+        </div>
+      </header>
+      
+      <div class="chapter-body">
+        {formatContent(chapter.content).map(paragraph => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
+      
+      <footer class="chapter-footer">
+        <div class="chapter-nav">
+          {prevChapter ? (
+            <a href={`/novel/${novel.id}/${prevChapter.id}`} class="nav-btn prev">
+              <span class="nav-icon">←</span>
+              <span class="nav-text">
+                <small>上一章</small>
+                <strong>{prevChapter.title}</strong>
+              </span>
+            </a>
+          ) : (
+            <div></div>
+          )}
+          
+          {nextChapter ? (
+            <a href={`/novel/${novel.id}/${nextChapter.id}`} class="nav-btn next">
+              <span class="nav-text">
+                <small>下一章</small>
+                <strong>{nextChapter.title}</strong>
+              </span>
+              <span class="nav-icon">→</span>
+            </a>
+          ) : (
+            <div></div>
+          )}
+        </div>
+        
+        <div class="back-to-top">
+          <a href={`/novel/${novel.id}`} class="back-link">
+            ← 返回目录
+          </a>
+        </div>
+      </footer>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-lighter);
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  
+  .breadcrumb a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .breadcrumb a:hover {
+    color: var(--text);
+  }
+  
+  .sep {
+    color: var(--border);
+  }
+  
+  .current {
+    color: var(--text);
+  }
+  
+  /* Chapter Header */
+  .chapter-header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .chapter-header-line {
+    width: 40px;
+    height: 2px;
+    background: var(--line);
+    margin: 0 auto 24px;
+  }
+  
+  .chapter-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .chapter-num {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+  }
+  
+  .chapter-name {
+    letter-spacing: 2px;
+  }
+  
+  .chapter-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+  }
+  
+  /* Chapter Body */
+  .chapter-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .chapter-body p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--text);
+    text-indent: 2em;
+    margin-bottom: 1.5em;
+  }
+  
+  /* Chapter Footer */
+  .chapter-footer {
+    max-width: 720px;
+    margin: 64px auto 0;
+    padding: 0 20px;
+  }
+  
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    max-width: 280px;
+  }
+  
+  .nav-btn:hover {
+    border-color: var(--line);
+  }
+  
+  .nav-btn.next {
+    text-align: right;
+    margin-left: auto;
+  }
+  
+  .nav-icon {
+    font-size: 1.2rem;
+    color: var(--text-lighter);
+  }
+  
+  .nav-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .nav-text small {
+    font-size: 0.7rem;
+    color: var(--text-lighter);
+    font-family: var(--font-mono);
+  }
+  
+  .nav-text strong {
+    font-size: 0.9rem;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+  }
+  
+  .back-to-top {
+    padding-top: 24px;
+    text-align: center;
+  }
+  
+  .back-link {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .back-link:hover {
+    color: var(--text);
+  }
+  
+  @media (max-width: 640px) {
+    .chapter-nav {
+      flex-direction: column;
+    }
+    
+    .nav-btn {
+      max-width: 100%;
+    }
+    
+    .nav-btn.next {
+      text-align: left;
+    }
+    
+    .chapter-title {
+      font-size: 1.3rem;
+    }
+  }
+</style>
