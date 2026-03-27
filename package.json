@@ -5,7 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "ai-writer": "node scripts/ai-writer.mjs",
+    "novel-processor": "node scripts/novel-processor.mjs",
+    "cron:all": "node scripts/cron-runner.mjs all",
+    "cron:writer": "node scripts/cron-runner.mjs ai-writer",
+    "cron:processor": "node scripts/cron-runner.mjs novel-processor"
   },
   "dependencies": {
     "astro": "^4.0.0"

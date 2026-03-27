@@ -1,9 +1,39 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getLatestNovels, authors, genres } from '../data/novels';
+import { novels as allNovels } from '../data/novels';
 import { getLatestPosts } from '../data/posts';
 
-const novels = getLatestNovels(6);
+// 基于日期生成随机种子，确保每天展示相同的小说
+function getDailySeed() {
+  const now = new Date();
+  return now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+}
+
+// 伪随机数生成器
+function seededRandom(seed) {
+  let x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
+// 每天随机抽取6本小说
+function getDailyNovels(novels, count = 6) {
+  if (novels.length <= count) return novels;
+  
+  const seed = getDailySeed();
+  const shuffled = [...novels];
+  
+  // Fisher-Yates shuffle with seed
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const random = seededRandom(seed + i);
+    const j = Math.floor(random * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  
+  return shuffled.slice(0, count);
+}
+
+const displayNovels = getDailyNovels(allNovels, 6);
+const hiddenNovels = allNovels.length > 6;
 const posts = getLatestPosts(3);
 const currentYear = new Date().getFullYear();
 const currentMonth = new Date().getMonth() + 1;
@@ -14,20 +44,20 @@ function formatDate(dateStr) {
 }
 ---
 
-<BaseLayout title="桕树地街 | AI小说博客">
+<BaseLayout title="桕树地街">
   <div class="container">
     <!-- Hero -->
     <section class="hero">
       <div class="hero-content">
         <div class="hero-line"></div>
         <h1 class="hero-title">桕树地街</h1>
-        <p class="hero-desc">AI 创作 · 静态博客 · 探索可能</p>
+        <p class="hero-desc">个人作品的分享与展示</p>
         <div class="hero-meta">
           <span class="hero-stat">
             <strong>{posts.length}</strong> 篇博客
           </span>
           <span class="hero-stat">
-            <strong>{novels.length}</strong> 部小说
+            <strong>{allNovels.length}</strong> 部小说
           </span>
           <span class="hero-stat">
             <strong>{currentYear}.{currentMonth}</strong> 持续更新
@@ -36,79 +66,42 @@ function formatDate(dateStr) {
       </div>
     </section>
 
-    <!-- Genres -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">小说分类</h2>
-        <div class="section-line"></div>
-      </div>
-      
-      <div class="genre-grid">
-        {genres.map((genre, index) => (
-          <a href={`/blog/genre/${genre.name}`} class="genre-card" style={`--delay: ${index * 0.05}s`}>
-            <span class="genre-name">{genre.name}</span>
-            <span class="genre-count">{genre.count}</span>
-          </a>
-        ))}
-      </div>
-    </section>
-    
     <!-- Novels -->
     <section class="section">
       <div class="section-header">
-        <h2 class="section-title">最新小说</h2>
+        <h2 class="section-title">今日推荐</h2>
         <div class="section-line"></div>
+        {hiddenNovels && (
+          <a href="/novels" class="more-link">全部作品 →</a>
+        )}
       </div>
       
-      <div class="novel-grid">
-        {novels.map((novel, index) => (
-          <a href={`/blog/novel/${novel.id}`} class="novel-card" style={`--delay: ${index * 0.08}s`}>
-            <div class="novel-card-header">
-              <span class="novel-genre">{novel.genre}</span>
-              <span class="novel-status">{novel.status}</span>
-            </div>
-            
-            <h3 class="novel-title">{novel.title}</h3>
-            
-            <p class="novel-intro">{novel.intro}</p>
-            
-            <div class="novel-meta">
-              <span class="novel-author">{novel.authorName}</span>
-              <span class="novel-chapters">{novel.totalChapters}章</span>
-            </div>
-            
-            <div class="novel-tags">
-              {novel.tags.slice(0, 2).map(tag => (
-                <span class="novel-tag">{tag}</span>
-              ))}
+      <div class="novel-list">
+        {displayNovels.map((novel, index) => (
+          <a href={`/blog/novel/${novel.id}`} class="novel-item" style={`--delay: ${index * 0.1}s`}>
+            <div class="novel-content">
+              <div class="novel-header">
+                <h3 class="novel-title">{novel.title}</h3>
+                <span class="novel-status">{novel.status}</span>
+              </div>
+              <p class="novel-intro">{novel.intro}</p>
+              <div class="novel-meta">
+                <span class="novel-author">作者：{novel.authorName}</span>
+                <span class="novel-chapters">{novel.totalChapters} 章节</span>
+                <span class="novel-genre">{novel.genre}</span>
+              </div>
             </div>
           </a>
         ))}
       </div>
-    </section>
-    
-    <!-- Authors -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">作者动态</h2>
-        <div class="section-line"></div>
-      </div>
       
-      <div class="author-grid">
-        {authors.map((author, index) => (
-          <div class="author-card" style={`--delay: ${index * 0.1}s`}>
-            <div class="author-avatar">{author.avatar}</div>
-            <div class="author-info">
-              <h4 class="author-name">{author.name}</h4>
-              <p class="author-type">{author.personality}</p>
-              <p class="author-desc">{author.desc}</p>
-              <p class="author-next">下次更新: {author.nextUpdate}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      {hiddenNovels && (
+        <div class="novel-footer">
+          <p class="novel-hint">共 {allNovels.length} 部作品，每日随机展示 6 部</p>
+        </div>
+      )}
     </section>
-    
+
     <!-- Blog Posts -->
     <section class="section">
       <div class="section-header">
@@ -134,7 +127,7 @@ function formatDate(dateStr) {
         ))}
       </div>
       
-      <div class="more-link">
+      <div class="more-link-wrapper">
         <a href="/blog">查看更多博客 →</a>
       </div>
     </section>
@@ -144,7 +137,7 @@ function formatDate(dateStr) {
       <div class="about-content">
         <div class="about-line"></div>
         <h3>关于 桕树地街</h3>
-        <p>一个实验性的 AI 小说与博客平台。探索人类与 AI 在创作中的协作可能。</p>
+        <p>这是我的博客平台，提交小说内容将由我完成开头，而后令ai定期更新，我很好奇这样究竟会发生怎样的化学反应。另外我会在这里更新自己的美术作品集，制作好用的skill也会分享于上面，喜欢的朋友可以多多关注我的网站</p>
         <div class="about-features">
           <div class="about-feature">
             <span class="feature-icon">⟡</span>
@@ -152,7 +145,7 @@ function formatDate(dateStr) {
           </div>
           <div class="about-feature">
             <span class="feature-icon">∞</span>
-            <span>无限内容</span>
+            <span>AI驱动</span>
           </div>
           <div class="about-feature">
             <span class="feature-icon">⚡</span>
@@ -251,23 +244,34 @@ function formatDate(dateStr) {
     background: var(--line);
   }
   
-  /* Genre Grid */
-  .genre-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 16px;
+  .more-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
   }
   
-  .genre-card {
+  .more-link:hover {
+    color: var(--text);
+  }
+  
+  /* Novel List */
+  .novel-list {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 20px;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .novel-item {
+    display: block;
+    padding: 32px;
     background: var(--bg-card);
     border: 1px solid var(--border);
+    border-radius: 8px;
     text-decoration: none;
-    transition: all 0.2s;
-    animation: fadeIn 0.5s ease-out var(--delay) both;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.6s ease-out var(--delay) both;
   }
   
   @keyframes fadeIn {
@@ -275,163 +279,75 @@ function formatDate(dateStr) {
     to { opacity: 1; transform: translateY(0); }
   }
   
-  .genre-card:hover {
+  .novel-item:hover {
     border-color: var(--line);
-    transform: translateX(4px);
-  }
-  
-  .genre-name {
-    font-size: 0.95rem;
-  }
-  
-  .genre-count {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--text-lighter);
-  }
-  
-  /* Novel Grid */
-  .novel-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
-  }
-  
-  .novel-card {
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    text-decoration: none;
-    transition: all 0.25s;
-    animation: fadeIn 0.5s ease-out var(--delay) both;
-  }
-  
-  .novel-card:hover {
-    border-color: var(--line);
-    box-shadow: 4px 4px 0 var(--line);
+    box-shadow: 6px 6px 0 var(--line);
     transform: translate(-2px, -2px);
   }
   
-  .novel-card-header {
+  .novel-content {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
+    flex-direction: column;
+    gap: 16px;
   }
   
-  .novel-genre {
-    font-size: 0.75rem;
-    font-family: var(--font-mono);
-    color: var(--accent);
-    letter-spacing: 1px;
+  .novel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .novel-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
   }
   
   .novel-status {
     font-size: 0.75rem;
-    color: var(--success);
-  }
-  
-  .novel-title {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
-    font-weight: 600;
+    padding: 4px 12px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    border-radius: 12px;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
   }
   
   .novel-intro {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-light);
     line-height: 1.6;
-    flex: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 16px;
+    margin: 0;
   }
   
   .novel-meta {
     display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: var(--text-lighter);
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 12px;
-  }
-  
-  .novel-author {
-    font-family: var(--font-mono);
-  }
-  
-  .novel-tags {
-    display: flex;
-    gap: 8px;
-  }
-  
-  .novel-tag {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    background: var(--accent-dim);
-    color: var(--text-light);
-    font-family: var(--font-mono);
-  }
-  
-  /* Author Grid */
-  .author-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  
-  .author-card {
-    display: flex;
     gap: 16px;
-    padding: 20px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    animation: fadeIn 0.5s ease-out var(--delay) both;
-  }
-  
-  .author-avatar {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--line);
-    color: var(--bg-card);
-    font-family: var(--font-mono);
-    font-weight: bold;
-    font-size: 1.1rem;
-  }
-  
-  .author-info {
-    flex: 1;
-  }
-  
-  .author-name {
-    font-size: 1rem;
-    margin-bottom: 4px;
-  }
-  
-  .author-type {
-    font-size: 0.75rem;
-    font-family: var(--font-mono);
-    color: var(--accent);
-    margin-bottom: 8px;
-  }
-  
-  .author-desc {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    margin-bottom: 4px;
-  }
-  
-  .author-next {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: var(--text-lighter);
     font-family: var(--font-mono);
+  }
+  
+  .novel-author,
+  .novel-chapters,
+  .novel-genre {
+    padding: 2px 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+  
+  .novel-footer {
+    margin-top: 24px;
+    text-align: center;
+  }
+  
+  .novel-hint {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-lighter);
   }
   
   /* Blog Grid */
@@ -508,12 +424,12 @@ function formatDate(dateStr) {
     font-family: var(--font-mono);
   }
   
-  .more-link {
+  .more-link-wrapper {
     text-align: center;
     margin-top: 24px;
   }
   
-  .more-link a {
+  .more-link-wrapper a {
     font-family: var(--font-mono);
     font-size: 0.85rem;
     color: var(--text-light);
@@ -521,7 +437,7 @@ function formatDate(dateStr) {
     transition: color 0.2s;
   }
   
-  .more-link a:hover {
+  .more-link-wrapper a:hover {
     color: var(--text);
   }
   
@@ -586,8 +502,15 @@ function formatDate(dateStr) {
       gap: 16px;
     }
     
-    .novel-grid {
-      grid-template-columns: 1fr;
+    .novel-meta {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .novel-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
     }
   }
 </style>

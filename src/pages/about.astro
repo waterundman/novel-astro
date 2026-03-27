@@ -13,7 +13,7 @@ const totalChapters = novels.reduce((sum, n) => sum + n.totalChapters, 0);
     <header class="page-header">
       <div class="page-header-line"></div>
       <h1 class="page-title">ABOUT</h1>
-      <p class="page-desc">关于这个项目的一些信息</p>
+      <p class="page-desc">关于我的一些无聊的想法</p>
     </header>
     
     <div class="about-layout">
@@ -28,14 +28,6 @@ const totalChapters = novels.reduce((sum, n) => sum + n.totalChapters, 0);
           <p>
             桕树地街 是一个实验性的 AI 小说与博客平台。在这个项目中，我尝试探索人类与 AI 在创作过程中的协作模式。
           </p>
-          <p>
-            这里的「创作」分为两部分：<br/>
-            <strong>小说</strong>——由 AI 根据设定生成具体内容。<br/>
-            <strong>博客</strong>——我提供想法和方向，AI 辅助完成文字。
-          </p>
-          <p>
-            技术上，这个网站使用 <strong>Astro</strong> 构建，是一个纯静态站点。这意味着它：
-          </p>
           <ul class="feature-list">
             <li>⚡ 加载速度极快</li>
             <li>🔒 安全性高（无服务器、无数据库）</li>
@@ -45,32 +37,28 @@ const totalChapters = novels.reduce((sum, n) => sum + n.totalChapters, 0);
         </div>
       </section>
       
-      <!-- Stats -->
-      <section class="about-section">
-        <div class="section-header">
-          <span class="section-num">02</span>
-          <h2 class="section-title">数据统计</h2>
-        </div>
-        
-        <div class="stats-grid">
-          <div class="stat-card">
-            <span class="stat-value">{novelCount}</span>
-            <span class="stat-label">小说作品</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-value">{totalChapters}</span>
-            <span class="stat-label">章节总数</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-value">{postCount}</span>
-            <span class="stat-label">博客文章</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-value">100%</span>
-            <span class="stat-label">静态生成</span>
-          </div>
-        </div>
-      </section>
+       <!-- Stats -->
+       <section class="about-section">
+         <div class="section-header">
+           <span class="section-num">02</span>
+           <h2 class="section-title">数据统计</h2>
+         </div>
+         
+         <div class="stats-grid">
+           <div class="stat-card">
+             <span class="stat-value">{novelCount}</span>
+             <span class="stat-label">小说作品</span>
+           </div>
+           <div class="stat-card">
+             <span class="stat-value">{totalChapters}</span>
+             <span class="stat-label">章节总数</span>
+           </div>
+           <div class="stat-card">
+             <span class="stat-value">{postCount}</span>
+             <span class="stat-label">博客文章</span>
+           </div>
+         </div>
+       </section>
       
       <!-- Tech Stack -->
       <section class="about-section">
@@ -109,13 +97,13 @@ const totalChapters = novels.reduce((sum, n) => sum + n.totalChapters, 0);
         <div class="contact-content">
           <p>如果你对这个项目感兴趣，或者有任何建议，欢迎交流。</p>
           <div class="contact-links">
-            <a href="https://github.com" target="_blank" class="contact-link">
+            <a href="https://github.com/waterundman" target="_blank" rel="noopener" class="contact-link">
               <span class="link-icon">⌘</span>
               <span class="link-text">GitHub</span>
             </a>
-            <a href="mailto:hello@example.com" class="contact-link">
-              <span class="link-icon">✉</span>
-              <span class="link-text">Email</span>
+            <a href="https://space.bilibili.com/95846731" target="_blank" rel="noopener" class="contact-link">
+              <span class="link-icon">▶</span>
+              <span class="link-text">Bilibili</span>
             </a>
             <a href="/blog" class="contact-link">
               <span class="link-icon">✎</span>

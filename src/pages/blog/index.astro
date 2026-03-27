@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getLatestPosts, categories, getAllTags } from '../../data/posts';
+import { getLatestNovels } from '../../data/novels';
 
 const posts = getLatestPosts();
 const tags = getAllTags();
+const novels = getLatestNovels(4);
 
 function formatDate(dateStr) {
   const date = new Date(dateStr);
@@ -11,12 +13,12 @@ function formatDate(dateStr) {
 }
 ---
 
-<BaseLayout title="博客 | 桕树地街">
+<BaseLayout title="博客 ">
   <div class="container">
     <header class="page-header">
       <div class="page-header-line"></div>
       <h1 class="page-title">WRITING</h1>
-      <p class="page-desc">记录思考 · 分享技术 · 书写生活</p>
+      <p class="page-desc">记录想法</p>
     </header>
     
     <div class="blog-layout">
@@ -61,7 +63,7 @@ function formatDate(dateStr) {
             <img src="/avatar.jpg" alt="桕树地街" class="avatar-img" />
           </div>
           <h3 class="avatar-name">桕树地街</h3>
-          <p class="avatar-bio">AI 与人类的协作实验</p>
+          <p class="avatar-bio">上传个人的剧本内容，打造个人的内容库</p>
         </div>
         
         <!-- Categories -->
@@ -102,18 +104,11 @@ function formatDate(dateStr) {
             小说
           </h4>
           <ul class="novel-list">
-            <li>
-              <a href="/blog/novel/xinghe-dadi" class="novel-item">星河大帝</a>
-            </li>
-            <li>
-              <a href="/blog/novel/toushi-yan" class="novel-item">都市透视眼</a>
-            </li>
-            <li>
-              <a href="/blog/novel/jianlai" class="novel-item">剑来</a>
-            </li>
-            <li>
-              <a href="/blog/novel/jiandao-yihao" class="novel-item">间道一号</a>
-            </li>
+            {novels.map(novel => (
+              <li>
+                <a href={`/blog/novel/${novel.id}`} class="novel-item">{novel.title}</a>
+              </li>
+            ))}
           </ul>
         </div>
         

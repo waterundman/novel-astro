@@ -1,0 +1,87 @@
+[2026-03-11T16:49:02.079Z] === AI Writer Started ===
+[2026-03-11T16:49:02.087Z] Loaded 3 style samples
+[2026-03-11T16:49:02.090Z] FATAL: Unexpected token ':'
+[2026-03-11T16:49:32.509Z] === AI Writer Started ===
+[2026-03-11T16:49:32.515Z] Loaded 3 style samples
+[2026-03-11T16:49:32.517Z] FATAL: Expected property name or '}' in JSON at position 10 (line 3 column 5)
+[2026-03-11T16:49:53.885Z] === AI Writer Started ===
+[2026-03-11T16:49:53.893Z] Loaded 3 style samples
+[2026-03-11T16:49:53.896Z] FATAL: require is not defined
+[2026-03-11T16:50:22.046Z] === AI Writer Started ===
+[2026-03-11T16:50:22.057Z] Loaded 3 style samples
+[2026-03-11T16:50:22.063Z] FATAL: Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'd:'
+[2026-03-11T16:50:33.620Z] === AI Writer Started ===
+[2026-03-11T16:50:33.629Z] Loaded 3 style samples
+[2026-03-11T16:50:33.638Z] UPDATE: 星河大帝 by 林墨
+[2026-03-11T16:50:57.270Z] SUCCESS: 星河大帝 - 第4章 青阳之行 (1327 words)
+[2026-03-11T16:50:59.287Z] SKIP: 都市透视眼 - 苏小筑 not updating today
+[2026-03-11T16:50:59.288Z] UPDATE: 剑来 by 顾北辰
+[2026-03-11T16:51:19.113Z] SUCCESS: 剑来 - 第3章 江湖风波起 (983 words)
+[2026-03-11T16:51:21.127Z] UPDATE: 间道一号 by 林墨
+[2026-03-11T16:51:51.694Z] SUCCESS: 间道一号 - 第2章 无形的遗产 (1510 words)
+[2026-03-11T16:51:53.710Z] UPDATE: 雪燕 by 雪燕
+[2026-03-11T16:52:11.650Z] SUCCESS: 雪燕 - 第2章 风中的轻语 (1028 words)
+[2026-03-11T16:52:13.655Z] Saved 4 new chapters
+[2026-03-11T16:52:13.656Z] === AI Writer Finished ===
+[2026-03-11T17:06:55.895Z] === AI Writer Started ===
+[2026-03-11T17:06:55.902Z] Loaded 3 style samples
+[2026-03-11T17:06:55.913Z] UPDATE: 雪燕 by 桕树地街
+[2026-03-11T17:07:19.468Z] SUCCESS: 雪燕 - 第2章 沙洲上的低语 (1564 words)
+[2026-03-11T17:07:21.472Z] Saved 1 new chapters
+[2026-03-11T17:07:21.473Z] === AI Writer Finished ===
+[2026-03-11T17:08:53.568Z] === AI Writer Started ===
+[2026-03-11T17:08:53.577Z] Loaded 3 style samples
+[2026-03-11T17:08:53.589Z] UPDATE: 雪燕 by 桕树地街
+[2026-03-11T17:09:19.427Z] SUCCESS: 雪燕 - 第3章 梦回北岛 (1185 words)
+[2026-03-11T17:09:21.437Z] Saved 1 new chapters
+[2026-03-11T17:09:21.438Z] === AI Writer Finished ===
+[2026-03-11T17:49:42.016Z] === AI Writer Started ===
+[2026-03-11T17:49:42.025Z] Loaded 5 style samples
+[2026-03-11T17:49:42.036Z] SKIP: 雪燕 - 桕树地街 not updating today
+[2026-03-11T17:49:42.037Z] === AI Writer Finished ===
+[2026-03-16T18:07:44.387Z] === AI Writer Started ===
+[2026-03-16T18:07:44.397Z] Loaded 5 style samples
+[2026-03-16T18:07:44.406Z] SKIP: 雪燕 - 桕树地街 not updating today
+[2026-03-16T18:07:44.407Z] SKIP: 四季凋水 - 桕树地街 not updating today
+[2026-03-16T18:07:44.409Z] UPDATE: 少女时代 by 桕树地街
+[2026-03-16T18:08:02.282Z] SUCCESS: 少女时代 - 第3章 纸上的岁月 (822 words)
+[2026-03-16T18:08:04.288Z] UPDATE: 朦胧的既视感 by 桕树地街
+[2026-03-16T18:08:22.712Z] SUCCESS: 朦胧的既视感 - 第2章 音符间的低语 (1019 words)
+[2026-03-16T18:08:24.715Z] SKIP: 纯白的立交桥下 - 桕树地街 not updating today
+[2026-03-16T18:08:24.718Z] Saved 2 new chapters
+[2026-03-16T18:08:24.720Z] === AI Writer Finished ===
+[2026-03-16T18:10:17.121Z] === AI Writer Started ===
+[2026-03-16T18:10:17.130Z] Loaded 5 style samples
+[2026-03-16T18:10:17.154Z] Loaded 9 novel samples from existing novels
+[2026-03-16T18:10:17.155Z] SKIP: 雪燕 - 桕树地街 not updating today
+[2026-03-16T18:10:17.157Z] UPDATE: 四季凋水 by 桕树地街
+[2026-03-16T18:10:36.882Z] SUCCESS: 四季凋水 - 第4章 暗夜之思 (1025 words)
+[2026-03-16T18:10:38.885Z] SKIP: 少女时代 - 桕树地街 not updating today
+[2026-03-16T18:10:38.888Z] UPDATE: 朦胧的既视感 by 桕树地街
+[2026-03-16T18:11:02.451Z] SUCCESS: 朦胧的既视感 - 第3章 梦回往昔的旋律 (1010 words)
+[2026-03-16T18:11:04.454Z] UPDATE: 纯白的立交桥下 by 桕树地街
+[2026-03-16T18:11:19.867Z] SUCCESS: 纯白的立交桥下 - 第2章 春风里的心动 (940 words)
+[2026-03-16T18:11:21.878Z] Saved 3 new chapters
+[2026-03-16T18:11:21.880Z] === AI Writer Finished ===
+[2026-03-16T18:30:07.707Z] === AI Writer Started ===
+[2026-03-16T18:30:07.715Z] Loaded 5 style samples
+[2026-03-16T18:30:07.739Z] Loaded 9 novel samples from existing novels
+[2026-03-16T18:30:07.741Z] UPDATE: 雪燕 by 桕树地街
+[2026-03-16T18:30:28.735Z] SUCCESS: 雪燕 - 第4章 天边的云彩 (1111 words)
+[2026-03-16T18:30:30.737Z] UPDATE: 四季凋水 by 桕树地街
+[2026-03-16T18:30:52.743Z] SUCCESS: 四季凋水 - 第3章 咖啡馆的沉思 (1267 words)
+[2026-03-16T18:30:54.754Z] UPDATE: 少女时代 by 桕树地街
+[2026-03-16T18:31:11.410Z] SUCCESS: 少女时代 - 第3章 温柔时光的回响 (968 words)
+[2026-03-16T18:31:13.423Z] SKIP: 朦胧的既视感 - 桕树地街 not updating today
+[2026-03-16T18:31:13.425Z] UPDATE: 纯白的立交桥下 by 桕树地街
+[2026-03-16T18:31:45.845Z] SUCCESS: 纯白的立交桥下 - 第2章 漫长的夜晚与初春的承诺 (1141 words)
+[2026-03-16T18:31:47.850Z] Saved 4 new chapters
+[2026-03-16T18:31:47.851Z] === AI Writer Finished ===
+[2026-03-27T11:04:51.252Z] [INFO] === AI Writer Started ===
+[2026-03-27T11:04:51.259Z] [INFO] Loaded 5 style samples
+[2026-03-27T11:04:51.267Z] [INFO] Loaded 5 novels from data file
+[2026-03-27T11:04:51.270Z] [INFO] Loaded 10 novel samples from existing novels
+[2026-03-27T11:04:51.271Z] [INFO] SKIP: 雪燕 - 桕树地街 not updating today
+[2026-03-27T11:04:51.272Z] [INFO] UPDATE: 四季凋水 by 桕树地街
+[2026-03-27T11:05:16.956Z] [INFO] SUCCESS: 四季凋水 - 第4章 漫游在哲学的海洋 (1216 words)
+[2026-03-27T11:05:18.961Z] [INFO] UPDATE: 少女时代 by 桕树地街

@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { posts, getAllTags } from '../../../data/posts';
+
+export function getStaticPaths() {
+  const tags = getAllTags();
+  return tags.map(tag => ({
+    params: { tag },
+    props: { tag }
+  }));
+}
+
+const { tag } = Astro.props;
+const tagPosts = posts.filter(p => p.tags.includes(tag));
+
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+---
+
+<BaseLayout title={`#${tag} | 博客 | 桕树地街`}>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="/">首页</a>
+      <span class="sep">/</span>
+      <a href="/blog">博客</a>
+      <span class="sep">/</span>
+      <span class="current">#{tag}</span>
+    </nav>
+    
+    <header class="page-header">
+      <div class="page-header-line"></div>
+      <h1 class="page-title">#{tag}</h1>
+      <p class="page-desc">共 {tagPosts.length} 篇文章</p>
+    </header>
+    
+    <div class="posts-list">
+      {tagPosts.map((post, index) => (
+        <article class="post-card" style={`--delay: ${index * 0.1}s`}>
+          <div class="post-meta">
+            <time class="post-date">{formatDate(post.date)}</time>
+            <span class="post-category">{post.category}</span>
+          </div>
+          
+          <a href={`/blog/${post.id}`} class="post-title-link">
+            <h3 class="post-title">{post.title}</h3>
+          </a>
+          
+          <p class="post-excerpt">{post.excerpt}</p>
+        </article>
+      ))}
+    </div>
+    
+    {tagPosts.length === 0 && (
+      <div class="empty-state">
+        <div class="empty-icon">━</div>
+        <p>该标签下暂无文章</p>
+      </div>
+    )}
+    
+    <div class="back-section">
+      <a href="/blog" class="back-link">← 返回博客列表</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-lighter);
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .breadcrumb a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .breadcrumb a:hover { color: var(--text); }
+  .sep { color: var(--border); }
+  .current { color: var(--text); }
+  
+  .page-header { margin-bottom: 48px; }
+  
+  .page-header-line {
+    width: 60px;
+    height: 3px;
+    background: var(--line);
+    margin-bottom: 20px;
+  }
+  
+  .page-title {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .page-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+  }
+  
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .post-card {
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    animation: fadeIn 0.5s ease-out var(--delay) both;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .post-card:hover {
+    border-color: var(--line);
+    box-shadow: 4px 4px 0 var(--line);
+    transform: translate(-2px, -2px);
+  }
+  
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .post-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-lighter);
+  }
+  
+  .post-category {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+  }
+  
+  .post-title-link { text-decoration: none; }
+  
+  .post-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    transition: color 0.2s;
+  }
+  
+  .post-title-link:hover .post-title { color: var(--accent); }
+  
+  .post-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 80px 0;
+    color: var(--text-lighter);
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    opacity: 0.3;
+  }
+  
+  .back-section {
+    margin-top: 48px;
+    text-align: center;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+  
+  .back-link {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .back-link:hover { color: var(--text); }
+</style>

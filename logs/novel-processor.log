@@ -1,0 +1,1097 @@
+[2026-03-11T17:45:30.560Z] === Novel Processor Started ===
+[2026-03-11T17:45:30.570Z] Loaded 5 style samples
+[2026-03-11T17:45:30.572Z] Found 5 novel start files
+[2026-03-11T17:45:30.574Z] Processing: novel-凋水-start.txt
+[2026-03-11T17:45:30.576Z] Title: 四季凋水
+[2026-03-11T17:45:30.578Z] Genre: 未知
+[2026-03-11T17:45:30.579Z] Intro: 
+[2026-03-11T17:45:30.580Z] Original words: 4059
+[2026-03-11T17:45:30.582Z] Split into 1 chapters
+[2026-03-11T17:45:30.583Z] Total words: 4059
+[2026-03-11T17:45:30.585Z] Story type: 短篇
+[2026-03-11T17:45:30.588Z] Subplot generated: {
+  "title": "四季凋水",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 4059,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:45:30.587Z",
+  "status": "未完结"
+}
+[2026-03-11T17:45:30.590Z] Processed 四季凋水 successfully
+[2026-03-11T17:45:30.592Z] Processing: novel-少女时代-start.txt
+[2026-03-11T17:45:30.594Z] Title: 少女时代
+[2026-03-11T17:45:30.595Z] Genre: 未知
+[2026-03-11T17:45:30.597Z] Intro: 
+[2026-03-11T17:45:30.598Z] Original words: 3472
+[2026-03-11T17:45:30.599Z] Split into 1 chapters
+[2026-03-11T17:45:30.600Z] Total words: 3472
+[2026-03-11T17:45:30.602Z] Story type: 短篇
+[2026-03-11T17:45:30.603Z] Subplot generated: {
+  "title": "少女时代",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 3472,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:45:30.603Z",
+  "status": "未完结"
+}
+[2026-03-11T17:45:30.605Z] Processed 少女时代 successfully
+[2026-03-11T17:45:30.608Z] Processing: novel-朦胧的既视感-start.txt
+[2026-03-11T17:45:30.611Z] Title: 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。
+[2026-03-11T17:45:30.613Z] Genre: 未知
+[2026-03-11T17:45:30.614Z] Intro: 
+[2026-03-11T17:45:30.615Z] Original words: 1518
+[2026-03-11T17:45:30.617Z] Need AI completion (target: 2000 words)
+[2026-03-11T17:45:47.800Z] AI completed: 747 words
+[2026-03-11T17:45:47.802Z] Total words: 747
+[2026-03-11T17:45:47.804Z] Story type: 短篇
+[2026-03-11T17:45:47.805Z] Subplot generated: {
+  "title": "就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 747,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:45:47.805Z",
+  "status": "未完结"
+}
+[2026-03-11T17:45:47.807Z] Processed 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。 successfully
+[2026-03-11T17:45:47.809Z] Processing: novel-纯白的立交桥下-start.txt
+[2026-03-11T17:45:47.812Z] Title: 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。
+[2026-03-11T17:45:47.814Z] Genre: 未知
+[2026-03-11T17:45:47.815Z] Intro: 
+[2026-03-11T17:45:47.816Z] Original words: 665
+[2026-03-11T17:45:47.818Z] Need AI completion (target: 2000 words)
+[2026-03-11T17:46:03.069Z] AI completed: 961 words
+[2026-03-11T17:46:03.071Z] Total words: 961
+[2026-03-11T17:46:03.073Z] Story type: 短篇
+[2026-03-11T17:46:03.074Z] Subplot generated: {
+  "title": "人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 961,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:46:03.074Z",
+  "status": "未完结"
+}
+[2026-03-11T17:46:03.078Z] Processed 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。 successfully
+[2026-03-11T17:46:03.081Z] Processing: novel-雪燕-start.txt
+[2026-03-11T17:46:03.085Z] Title: 雪燕：
+[2026-03-11T17:46:03.086Z] Genre: 未知
+[2026-03-11T17:46:03.088Z] Intro: 
+[2026-03-11T17:46:03.089Z] Original words: 5844
+[2026-03-11T17:46:03.090Z] Split into 1 chapters
+[2026-03-11T17:46:03.092Z] Total words: 5844
+[2026-03-11T17:46:03.093Z] Story type: 中篇
+[2026-03-11T17:46:03.096Z] Subplot generated: {
+  "title": "雪燕：",
+  "genre": "未知",
+  "type": "中篇",
+  "totalWords": 5844,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:46:03.096Z",
+  "status": "未完结"
+}
+[2026-03-11T17:46:03.098Z] Processed 雪燕： successfully
+[2026-03-11T17:46:03.100Z] === Novel Processor Finished ===
+[2026-03-11T17:48:05.841Z] === Novel Processor Started ===
+[2026-03-11T17:48:05.850Z] Loaded 5 style samples
+[2026-03-11T17:48:05.855Z] Found 5 novel start files
+[2026-03-11T17:48:05.857Z] Processing: novel-凋水-start.txt
+[2026-03-11T17:48:05.859Z] Title: 四季凋水
+[2026-03-11T17:48:05.861Z] Genre: 未知
+[2026-03-11T17:48:05.864Z] Intro: 
+[2026-03-11T17:48:05.868Z] Original words: 4059
+[2026-03-11T17:48:05.870Z] Split into 1 chapters
+[2026-03-11T17:48:05.872Z] Total words: 4059
+[2026-03-11T17:48:05.875Z] Story type: 短篇
+[2026-03-11T17:48:05.877Z] Subplot generated: {
+  "title": "四季凋水",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 4059,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:48:05.877Z",
+  "status": "未完结"
+}
+[2026-03-11T17:48:05.890Z] Added novel 四季凋水 with 1 chapters
+[2026-03-11T17:48:05.892Z] Processed and saved 四季凋水 successfully
+[2026-03-11T17:48:05.894Z] Processing: novel-少女时代-start.txt
+[2026-03-11T17:48:05.896Z] Title: 少女时代
+[2026-03-11T17:48:05.898Z] Genre: 未知
+[2026-03-11T17:48:05.900Z] Intro: 
+[2026-03-11T17:48:05.901Z] Original words: 3472
+[2026-03-11T17:48:05.904Z] Split into 1 chapters
+[2026-03-11T17:48:05.906Z] Total words: 3472
+[2026-03-11T17:48:05.908Z] Story type: 短篇
+[2026-03-11T17:48:05.910Z] Subplot generated: {
+  "title": "少女时代",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 3472,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:48:05.910Z",
+  "status": "未完结"
+}
+[2026-03-11T17:48:05.931Z] Added novel 少女时代 with 1 chapters
+[2026-03-11T17:48:05.933Z] Processed and saved 少女时代 successfully
+[2026-03-11T17:48:05.936Z] Processing: novel-朦胧的既视感-start.txt
+[2026-03-11T17:48:05.938Z] Title: 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。
+[2026-03-11T17:48:05.940Z] Genre: 未知
+[2026-03-11T17:48:05.941Z] Intro: 
+[2026-03-11T17:48:05.943Z] Original words: 1518
+[2026-03-11T17:48:05.944Z] Need AI completion (target: 2000 words)
+[2026-03-11T17:48:23.973Z] AI completed: 765 words
+[2026-03-11T17:48:23.974Z] Total words: 765
+[2026-03-11T17:48:23.977Z] Story type: 短篇
+[2026-03-11T17:48:23.978Z] Subplot generated: {
+  "title": "就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 765,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:48:23.978Z",
+  "status": "未完结"
+}
+[2026-03-11T17:48:23.989Z] Added novel 就在那个夏天水行路转我来来回回的仿佛跑到了世界的尽头 with 1 chapters
+[2026-03-11T17:48:23.990Z] Processed and saved 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。 successfully
+[2026-03-11T17:48:23.993Z] Processing: novel-纯白的立交桥下-start.txt
+[2026-03-11T17:48:23.995Z] Title: 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。
+[2026-03-11T17:48:23.998Z] Genre: 未知
+[2026-03-11T17:48:24.000Z] Intro: 
+[2026-03-11T17:48:24.002Z] Original words: 665
+[2026-03-11T17:48:24.003Z] Need AI completion (target: 2000 words)
+[2026-03-11T17:48:51.289Z] AI completed: 1313 words
+[2026-03-11T17:48:51.291Z] Total words: 1313
+[2026-03-11T17:48:51.293Z] Story type: 短篇
+[2026-03-11T17:48:51.294Z] Subplot generated: {
+  "title": "人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 1313,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:48:51.294Z",
+  "status": "未完结"
+}
+[2026-03-11T17:48:51.305Z] Added novel 人群逐渐拥挤起来随着红绿灯开闸放水终于恢复到以往空荡荡的模样 with 1 chapters
+[2026-03-11T17:48:51.307Z] Processed and saved 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。 successfully
+[2026-03-11T17:48:51.309Z] Processing: novel-雪燕-start.txt
+[2026-03-11T17:48:51.310Z] Title: 雪燕：
+[2026-03-11T17:48:51.312Z] Genre: 未知
+[2026-03-11T17:48:51.313Z] Intro: 
+[2026-03-11T17:48:51.315Z] Original words: 5844
+[2026-03-11T17:48:51.316Z] Split into 1 chapters
+[2026-03-11T17:48:51.317Z] Total words: 5844
+[2026-03-11T17:48:51.318Z] Story type: 中篇
+[2026-03-11T17:48:51.319Z] Subplot generated: {
+  "title": "雪燕：",
+  "genre": "未知",
+  "type": "中篇",
+  "totalWords": 5844,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:48:51.319Z",
+  "status": "未完结"
+}
+[2026-03-11T17:48:51.339Z] Added novel 雪燕 with 1 chapters
+[2026-03-11T17:48:51.341Z] Processed and saved 雪燕： successfully
+[2026-03-11T17:48:51.343Z] === Novel Processor Finished ===
+[2026-03-11T17:50:52.597Z] === Novel Processor Started ===
+[2026-03-11T17:50:52.605Z] Loaded 5 style samples
+[2026-03-11T17:50:52.607Z] Found 5 novel start files
+[2026-03-11T17:50:52.609Z] Processing: novel-凋水-start.txt
+[2026-03-11T17:50:52.613Z] Title: 四季凋水
+[2026-03-11T17:50:52.617Z] Genre: 未知
+[2026-03-11T17:50:52.620Z] Intro: 
+[2026-03-11T17:50:52.621Z] Original words: 4059
+[2026-03-11T17:50:52.625Z] Split into 1 chapters
+[2026-03-11T17:50:52.627Z] Total words: 4059
+[2026-03-11T17:50:52.630Z] Story type: 短篇
+[2026-03-11T17:50:52.633Z] Subplot generated: {
+  "title": "四季凋水",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 4059,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:50:52.633Z",
+  "status": "未完结"
+}
+[2026-03-11T17:50:52.644Z] Novel 四季凋水 already exists, skipping
+[2026-03-11T17:50:52.646Z] Processed and saved 四季凋水 successfully
+[2026-03-11T17:50:52.648Z] Processing: novel-少女时代-start.txt
+[2026-03-11T17:50:52.649Z] Title: 少女时代
+[2026-03-11T17:50:52.651Z] Genre: 未知
+[2026-03-11T17:50:52.653Z] Intro: 
+[2026-03-11T17:50:52.655Z] Original words: 3472
+[2026-03-11T17:50:52.657Z] Split into 1 chapters
+[2026-03-11T17:50:52.660Z] Total words: 3472
+[2026-03-11T17:50:52.663Z] Story type: 短篇
+[2026-03-11T17:50:52.667Z] Subplot generated: {
+  "title": "少女时代",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 3472,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:50:52.667Z",
+  "status": "未完结"
+}
+[2026-03-11T17:50:52.684Z] Novel 少女时代 already exists, skipping
+[2026-03-11T17:50:52.686Z] Processed and saved 少女时代 successfully
+[2026-03-11T17:50:52.688Z] Processing: novel-朦胧的既视感-start.txt
+[2026-03-11T17:50:52.689Z] Title: 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。
+[2026-03-11T17:50:52.691Z] Genre: 未知
+[2026-03-11T17:50:52.693Z] Intro: 
+[2026-03-11T17:50:52.694Z] Original words: 1518
+[2026-03-11T17:50:52.696Z] Need AI completion (target: 2000 words)
+[2026-03-11T17:51:10.897Z] AI completed: 709 words
+[2026-03-11T17:51:10.899Z] Total words: 709
+[2026-03-11T17:51:10.901Z] Story type: 短篇
+[2026-03-11T17:51:10.902Z] Subplot generated: {
+  "title": "就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 709,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:51:10.902Z",
+  "status": "未完结"
+}
+[2026-03-11T17:51:10.910Z] Novel 就在那个夏天水行路转我来来回回的仿佛跑到了世界的尽头 already exists, skipping
+[2026-03-11T17:51:10.912Z] Processed and saved 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。 successfully
+[2026-03-11T17:51:10.914Z] Processing: novel-纯白的立交桥下-start.txt
+[2026-03-11T17:51:10.916Z] Title: 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。
+[2026-03-11T17:51:10.917Z] Genre: 未知
+[2026-03-11T17:51:10.919Z] Intro: 
+[2026-03-11T17:51:10.920Z] Original words: 665
+[2026-03-11T17:51:10.924Z] Need AI completion (target: 2000 words)
+[2026-03-11T17:51:39.711Z] AI completed: 1194 words
+[2026-03-11T17:51:39.712Z] Total words: 1194
+[2026-03-11T17:51:39.715Z] Story type: 短篇
+[2026-03-11T17:51:39.716Z] Subplot generated: {
+  "title": "人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 1194,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:51:39.716Z",
+  "status": "未完结"
+}
+[2026-03-11T17:51:39.723Z] Novel 人群逐渐拥挤起来随着红绿灯开闸放水终于恢复到以往空荡荡的模样 already exists, skipping
+[2026-03-11T17:51:39.725Z] Processed and saved 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。 successfully
+[2026-03-11T17:51:39.726Z] Processing: novel-雪燕-start.txt
+[2026-03-11T17:51:39.728Z] Title: 雪燕：
+[2026-03-11T17:51:39.729Z] Genre: 未知
+[2026-03-11T17:51:39.730Z] Intro: 
+[2026-03-11T17:51:39.732Z] Original words: 5844
+[2026-03-11T17:51:39.734Z] Split into 1 chapters
+[2026-03-11T17:51:39.736Z] Total words: 5844
+[2026-03-11T17:51:39.737Z] Story type: 中篇
+[2026-03-11T17:51:39.740Z] Subplot generated: {
+  "title": "雪燕：",
+  "genre": "未知",
+  "type": "中篇",
+  "totalWords": 5844,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T17:51:39.740Z",
+  "status": "未完结"
+}
+[2026-03-11T17:51:39.760Z] Novel 雪燕 already exists, skipping
+[2026-03-11T17:51:39.761Z] Processed and saved 雪燕： successfully
+[2026-03-11T17:51:39.763Z] === Novel Processor Finished ===
+[2026-03-11T18:08:56.018Z] === Novel Processor Started ===
+[2026-03-11T18:08:56.030Z] Loaded 5 style samples
+[2026-03-11T18:08:56.033Z] Found 5 novel start files
+[2026-03-11T18:08:56.035Z] Processing: novel-凋水-start.txt
+[2026-03-11T18:08:56.037Z] Title: 四季凋水
+[2026-03-11T18:08:56.041Z] Genre: 未知
+[2026-03-11T18:08:56.042Z] Intro: 
+[2026-03-11T18:08:56.045Z] Original words: 4059
+[2026-03-11T18:08:56.049Z] Split into 1 chapters
+[2026-03-11T18:08:56.050Z] Total words: 4059
+[2026-03-11T18:08:56.053Z] Story type: 短篇
+[2026-03-11T18:08:56.055Z] Subplot generated: {
+  "title": "四季凋水",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 4059,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:08:56.055Z",
+  "status": "未完结"
+}
+[2026-03-11T18:08:56.070Z] Novel 四季凋水 already exists, skipping
+[2026-03-11T18:08:56.073Z] Processed and saved 四季凋水 successfully
+[2026-03-11T18:08:56.075Z] Processing: novel-少女时代-start.txt
+[2026-03-11T18:08:56.077Z] Title: 少女时代
+[2026-03-11T18:08:56.079Z] Genre: 未知
+[2026-03-11T18:08:56.080Z] Intro: 
+[2026-03-11T18:08:56.083Z] Original words: 3472
+[2026-03-11T18:08:56.085Z] Split into 1 chapters
+[2026-03-11T18:08:56.087Z] Total words: 3472
+[2026-03-11T18:08:56.089Z] Story type: 短篇
+[2026-03-11T18:08:56.092Z] Subplot generated: {
+  "title": "少女时代",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 3472,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:08:56.092Z",
+  "status": "未完结"
+}
+[2026-03-11T18:08:56.104Z] Novel 少女时代 already exists, skipping
+[2026-03-11T18:08:56.107Z] Processed and saved 少女时代 successfully
+[2026-03-11T18:08:56.110Z] Processing: novel-朦胧的既视感-start.txt
+[2026-03-11T18:08:56.111Z] Title: 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。
+[2026-03-11T18:08:56.113Z] Genre: 未知
+[2026-03-11T18:08:56.115Z] Intro: 
+[2026-03-11T18:08:56.116Z] Original words: 1518
+[2026-03-11T18:08:56.118Z] Need AI completion (target: 2000 words)
+[2026-03-11T18:09:15.184Z] AI completed: 759 words
+[2026-03-11T18:09:15.186Z] Total words: 759
+[2026-03-11T18:09:15.188Z] Story type: 短篇
+[2026-03-11T18:09:15.197Z] Subplot generated: {
+  "title": "就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 759,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:09:15.197Z",
+  "status": "未完结"
+}
+[2026-03-11T18:09:15.213Z] Added novel 就在那个夏天水行路转我来来回回的仿佛跑到了世界的尽头 with 1 chapters
+[2026-03-11T18:09:15.217Z] Processed and saved 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。 successfully
+[2026-03-11T18:09:15.221Z] Processing: novel-纯白的立交桥下-start.txt
+[2026-03-11T18:09:15.223Z] Title: 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。
+[2026-03-11T18:09:15.225Z] Genre: 未知
+[2026-03-11T18:09:15.227Z] Intro: 
+[2026-03-11T18:09:15.230Z] Original words: 665
+[2026-03-11T18:09:15.232Z] Need AI completion (target: 2000 words)
+[2026-03-11T18:09:30.020Z] AI completed: 1093 words
+[2026-03-11T18:09:30.022Z] Total words: 1093
+[2026-03-11T18:09:30.024Z] Story type: 短篇
+[2026-03-11T18:09:30.025Z] Subplot generated: {
+  "title": "人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 1093,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:09:30.025Z",
+  "status": "未完结"
+}
+[2026-03-11T18:09:30.033Z] Added novel 人群逐渐拥挤起来随着红绿灯开闸放水终于恢复到以往空荡荡的模样 with 1 chapters
+[2026-03-11T18:09:30.036Z] Processed and saved 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。 successfully
+[2026-03-11T18:09:30.039Z] Processing: novel-雪燕-start.txt
+[2026-03-11T18:09:30.041Z] Title: 雪燕：
+[2026-03-11T18:09:30.043Z] Genre: 未知
+[2026-03-11T18:09:30.046Z] Intro: 
+[2026-03-11T18:09:30.048Z] Original words: 5844
+[2026-03-11T18:09:30.049Z] Split into 1 chapters
+[2026-03-11T18:09:30.050Z] Total words: 5844
+[2026-03-11T18:09:30.051Z] Story type: 中篇
+[2026-03-11T18:09:30.053Z] Subplot generated: {
+  "title": "雪燕：",
+  "genre": "未知",
+  "type": "中篇",
+  "totalWords": 5844,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:09:30.053Z",
+  "status": "未完结"
+}
+[2026-03-11T18:09:30.065Z] Added novel 雪燕 with 1 chapters
+[2026-03-11T18:09:30.068Z] Processed and saved 雪燕： successfully
+[2026-03-11T18:09:30.071Z] === Novel Processor Finished ===
+[2026-03-11T18:11:38.013Z] === Novel Processor Started ===
+[2026-03-11T18:11:38.023Z] Loaded 5 style samples
+[2026-03-11T18:11:38.026Z] Found 5 novel start files
+[2026-03-11T18:11:38.029Z] Processing: novel-凋水-start.txt
+[2026-03-11T18:11:38.032Z] Title: 四季凋水
+[2026-03-11T18:11:38.037Z] Genre: 未知
+[2026-03-11T18:11:38.039Z] Intro: 
+[2026-03-11T18:11:38.041Z] Original words: 4059
+[2026-03-11T18:11:38.045Z] Split into 1 chapters
+[2026-03-11T18:11:38.049Z] Total words: 4059
+[2026-03-11T18:11:38.050Z] Story type: 短篇
+[2026-03-11T18:11:38.054Z] Subplot generated: {
+  "title": "四季凋水",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 4059,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:11:38.054Z",
+  "status": "未完结"
+}
+[2026-03-11T18:11:38.064Z] Updated existing novel 四季凋水
+[2026-03-11T18:11:38.069Z] Added novel 四季凋水 with 1 chapters
+[2026-03-11T18:11:38.070Z] Processed and saved 四季凋水 successfully
+[2026-03-11T18:11:38.073Z] Processing: novel-少女时代-start.txt
+[2026-03-11T18:11:38.074Z] Title: 少女时代
+[2026-03-11T18:11:38.077Z] Genre: 未知
+[2026-03-11T18:11:38.078Z] Intro: 
+[2026-03-11T18:11:38.079Z] Original words: 3472
+[2026-03-11T18:11:38.081Z] Split into 1 chapters
+[2026-03-11T18:11:38.083Z] Total words: 3472
+[2026-03-11T18:11:38.086Z] Story type: 短篇
+[2026-03-11T18:11:38.089Z] Subplot generated: {
+  "title": "少女时代",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 3472,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:11:38.089Z",
+  "status": "未完结"
+}
+[2026-03-11T18:11:38.109Z] Updated existing novel 少女时代
+[2026-03-11T18:11:38.113Z] Added novel 少女时代 with 1 chapters
+[2026-03-11T18:11:38.115Z] Processed and saved 少女时代 successfully
+[2026-03-11T18:11:38.117Z] Processing: novel-朦胧的既视感-start.txt
+[2026-03-11T18:11:38.119Z] Title: 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。
+[2026-03-11T18:11:38.121Z] Genre: 未知
+[2026-03-11T18:11:38.122Z] Intro: 
+[2026-03-11T18:11:38.123Z] Original words: 1518
+[2026-03-11T18:11:38.126Z] Need AI completion (target: 2000 words)
+[2026-03-11T18:11:54.716Z] AI completed: 942 words
+[2026-03-11T18:11:54.717Z] Total words: 942
+[2026-03-11T18:11:54.720Z] Story type: 短篇
+[2026-03-11T18:11:54.722Z] Subplot generated: {
+  "title": "就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 942,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:11:54.722Z",
+  "status": "未完结"
+}
+[2026-03-11T18:11:54.730Z] Updated existing novel 就在那个夏天水行路转我来来回回的仿佛跑到了世界的尽头
+[2026-03-11T18:11:54.735Z] Added novel 就在那个夏天水行路转我来来回回的仿佛跑到了世界的尽头 with 1 chapters
+[2026-03-11T18:11:54.737Z] Processed and saved 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。 successfully
+[2026-03-11T18:11:54.739Z] Processing: novel-纯白的立交桥下-start.txt
+[2026-03-11T18:11:54.740Z] Title: 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。
+[2026-03-11T18:11:54.743Z] Genre: 未知
+[2026-03-11T18:11:54.744Z] Intro: 
+[2026-03-11T18:11:54.745Z] Original words: 665
+[2026-03-11T18:11:54.746Z] Need AI completion (target: 2000 words)
+[2026-03-11T18:12:11.857Z] AI completed: 1092 words
+[2026-03-11T18:12:11.858Z] Total words: 1092
+[2026-03-11T18:12:11.861Z] Story type: 短篇
+[2026-03-11T18:12:11.862Z] Subplot generated: {
+  "title": "人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 1092,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:12:11.862Z",
+  "status": "未完结"
+}
+[2026-03-11T18:12:11.869Z] Updated existing novel 人群逐渐拥挤起来随着红绿灯开闸放水终于恢复到以往空荡荡的模样
+[2026-03-11T18:12:11.872Z] Added novel 人群逐渐拥挤起来随着红绿灯开闸放水终于恢复到以往空荡荡的模样 with 1 chapters
+[2026-03-11T18:12:11.875Z] Processed and saved 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。 successfully
+[2026-03-11T18:12:11.876Z] Processing: novel-雪燕-start.txt
+[2026-03-11T18:12:11.877Z] Title: 雪燕：
+[2026-03-11T18:12:11.878Z] Genre: 未知
+[2026-03-11T18:12:11.880Z] Intro: 
+[2026-03-11T18:12:11.881Z] Original words: 5844
+[2026-03-11T18:12:11.883Z] Split into 1 chapters
+[2026-03-11T18:12:11.884Z] Total words: 5844
+[2026-03-11T18:12:11.886Z] Story type: 中篇
+[2026-03-11T18:12:11.888Z] Subplot generated: {
+  "title": "雪燕：",
+  "genre": "未知",
+  "type": "中篇",
+  "totalWords": 5844,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-11T18:12:11.888Z",
+  "status": "未完结"
+}
+[2026-03-11T18:12:11.901Z] Updated existing novel 雪燕
+[2026-03-11T18:12:11.904Z] Added novel 雪燕 with 1 chapters
+[2026-03-11T18:12:11.906Z] Processed and saved 雪燕： successfully
+[2026-03-11T18:12:11.907Z] === Novel Processor Finished ===
+[2026-03-16T17:52:17.467Z] === Novel Processor Started ===
+[2026-03-16T17:52:17.479Z] Loaded 5 style samples
+[2026-03-16T17:52:17.481Z] Found 5 novel start files
+[2026-03-16T17:52:17.482Z] Processing: novel-凋水-start.txt
+[2026-03-16T17:52:17.484Z] Title: 四季凋水
+[2026-03-16T17:52:17.485Z] Genre: 未知
+[2026-03-16T17:52:17.486Z] Intro: 
+[2026-03-16T17:52:17.488Z] Original words: 4059
+[2026-03-16T17:52:17.490Z] Split into 1 chapters
+[2026-03-16T17:52:17.492Z] Total words: 4059
+[2026-03-16T17:52:17.494Z] Story type: 短篇
+[2026-03-16T17:52:17.496Z] Subplot generated: {
+  "title": "四季凋水",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 4059,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:52:17.496Z",
+  "status": "未完结"
+}
+[2026-03-16T17:52:17.507Z] FATAL: Cannot access 'authorId' before initialization
+[2026-03-16T17:52:49.671Z] === Novel Processor Started ===
+[2026-03-16T17:52:49.680Z] Loaded 5 style samples
+[2026-03-16T17:52:49.681Z] Found 5 novel start files
+[2026-03-16T17:52:49.683Z] Processing: novel-凋水-start.txt
+[2026-03-16T17:52:49.685Z] Title: 四季凋水
+[2026-03-16T17:52:49.688Z] Genre: 未知
+[2026-03-16T17:52:49.689Z] Intro: 
+[2026-03-16T17:52:49.692Z] Original words: 4059
+[2026-03-16T17:52:49.694Z] Split into 1 chapters
+[2026-03-16T17:52:49.696Z] Total words: 4059
+[2026-03-16T17:52:49.698Z] Story type: 短篇
+[2026-03-16T17:52:49.701Z] Subplot generated: {
+  "title": "四季凋水",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 4059,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:52:49.701Z",
+  "status": "未完结"
+}
+[2026-03-16T17:52:49.713Z] Added new novel 四季凋水
+[2026-03-16T17:52:49.716Z] Added novel 四季凋水 with 1 chapters
+[2026-03-16T17:52:49.718Z] Processed and saved 四季凋水 successfully
+[2026-03-16T17:52:49.720Z] Processing: novel-少女时代-start.txt
+[2026-03-16T17:52:49.722Z] Title: 少女时代
+[2026-03-16T17:52:49.723Z] Genre: 未知
+[2026-03-16T17:52:49.724Z] Intro: 
+[2026-03-16T17:52:49.725Z] Original words: 3472
+[2026-03-16T17:52:49.726Z] Split into 1 chapters
+[2026-03-16T17:52:49.728Z] Total words: 3472
+[2026-03-16T17:52:49.729Z] Story type: 短篇
+[2026-03-16T17:52:49.730Z] Subplot generated: {
+  "title": "少女时代",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 3472,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:52:49.730Z",
+  "status": "未完结"
+}
+[2026-03-16T17:52:49.735Z] Added new novel 少女时代
+[2026-03-16T17:52:49.738Z] Added novel 少女时代 with 1 chapters
+[2026-03-16T17:52:49.740Z] Processed and saved 少女时代 successfully
+[2026-03-16T17:52:49.742Z] Processing: novel-朦胧的既视感-start.txt
+[2026-03-16T17:52:49.743Z] Title: 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。
+[2026-03-16T17:52:49.744Z] Genre: 未知
+[2026-03-16T17:52:49.745Z] Intro: 
+[2026-03-16T17:52:49.746Z] Original words: 1518
+[2026-03-16T17:52:49.747Z] Split into 1 chapters
+[2026-03-16T17:52:49.749Z] Total words: 1518
+[2026-03-16T17:52:49.750Z] Story type: 短篇
+[2026-03-16T17:52:49.752Z] Subplot generated: {
+  "title": "就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 1518,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:52:49.752Z",
+  "status": "未完结"
+}
+[2026-03-16T17:52:49.756Z] Added new novel 就在那个夏天水行路转我来来回回的仿佛跑到了世界的尽头
+[2026-03-16T17:52:49.759Z] Added novel 就在那个夏天水行路转我来来回回的仿佛跑到了世界的尽头 with 1 chapters
+[2026-03-16T17:52:49.760Z] Processed and saved 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。 successfully
+[2026-03-16T17:52:49.762Z] Processing: novel-纯白的立交桥下-start.txt
+[2026-03-16T17:52:49.764Z] Title: 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。
+[2026-03-16T17:52:49.765Z] Genre: 未知
+[2026-03-16T17:52:49.766Z] Intro: 
+[2026-03-16T17:52:49.767Z] Original words: 665
+[2026-03-16T17:52:49.769Z] Need AI completion (target: 1500 words)
+[2026-03-16T17:53:22.960Z] AI completed: 1125 words
+[2026-03-16T17:53:22.961Z] Total words: 1125
+[2026-03-16T17:53:22.964Z] Story type: 短篇
+[2026-03-16T17:53:22.966Z] Subplot generated: {
+  "title": "人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 1125,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:53:22.966Z",
+  "status": "未完结"
+}
+[2026-03-16T17:53:22.972Z] Added new novel 人群逐渐拥挤起来随着红绿灯开闸放水终于恢复到以往空荡荡的模样
+[2026-03-16T17:53:22.975Z] Added novel 人群逐渐拥挤起来随着红绿灯开闸放水终于恢复到以往空荡荡的模样 with 1 chapters
+[2026-03-16T17:53:22.976Z] Processed and saved 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。 successfully
+[2026-03-16T17:53:22.978Z] Processing: novel-雪燕-start.txt
+[2026-03-16T17:53:22.979Z] Title: 雪燕：
+[2026-03-16T17:53:22.981Z] Genre: 未知
+[2026-03-16T17:53:22.982Z] Intro: 
+[2026-03-16T17:53:22.984Z] Original words: 5844
+[2026-03-16T17:53:22.986Z] Split into 1 chapters
+[2026-03-16T17:53:22.987Z] Total words: 5844
+[2026-03-16T17:53:22.989Z] Story type: 中篇
+[2026-03-16T17:53:22.990Z] Subplot generated: {
+  "title": "雪燕：",
+  "genre": "未知",
+  "type": "中篇",
+  "totalWords": 5844,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:53:22.990Z",
+  "status": "未完结"
+}
+[2026-03-16T17:53:22.996Z] Added new novel 雪燕
+[2026-03-16T17:53:22.999Z] Added novel 雪燕 with 1 chapters
+[2026-03-16T17:53:23.000Z] Processed and saved 雪燕： successfully
+[2026-03-16T17:53:23.001Z] === Novel Processor Finished ===
+[2026-03-16T17:54:06.488Z] === Novel Processor Started ===
+[2026-03-16T17:54:06.496Z] Loaded 5 style samples
+[2026-03-16T17:54:06.498Z] Found 5 novel start files
+[2026-03-16T17:54:06.500Z] Processing: novel-凋水-start.txt
+[2026-03-16T17:54:06.502Z] Title: 四季凋水
+[2026-03-16T17:54:06.503Z] Genre: 未知
+[2026-03-16T17:54:06.504Z] Intro: 
+[2026-03-16T17:54:06.506Z] Original words: 3883
+[2026-03-16T17:54:06.508Z] Split into 1 chapters
+[2026-03-16T17:54:06.510Z] Total words: 3883
+[2026-03-16T17:54:06.511Z] Story type: 短篇
+[2026-03-16T17:54:06.513Z] Subplot generated: {
+  "title": "四季凋水",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 3883,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:54:06.513Z",
+  "status": "未完结"
+}
+[2026-03-16T17:54:06.523Z] Updated existing novel 四季凋水
+[2026-03-16T17:54:06.528Z] Added novel 四季凋水 with 1 chapters
+[2026-03-16T17:54:06.529Z] Processed and saved 四季凋水 successfully
+[2026-03-16T17:54:06.531Z] Processing: novel-少女时代-start.txt
+[2026-03-16T17:54:06.532Z] Title: 少女时代
+[2026-03-16T17:54:06.533Z] Genre: 未知
+[2026-03-16T17:54:06.536Z] Intro: 
+[2026-03-16T17:54:06.537Z] Original words: 3312
+[2026-03-16T17:54:06.539Z] Split into 1 chapters
+[2026-03-16T17:54:06.540Z] Total words: 3312
+[2026-03-16T17:54:06.541Z] Story type: 短篇
+[2026-03-16T17:54:06.542Z] Subplot generated: {
+  "title": "少女时代",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 3312,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:54:06.542Z",
+  "status": "未完结"
+}
+[2026-03-16T17:54:06.547Z] Updated existing novel 少女时代
+[2026-03-16T17:54:06.550Z] Added novel 少女时代 with 1 chapters
+[2026-03-16T17:54:06.551Z] Processed and saved 少女时代 successfully
+[2026-03-16T17:54:06.553Z] Processing: novel-朦胧的既视感-start.txt
+[2026-03-16T17:54:06.554Z] Title: 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。
+[2026-03-16T17:54:06.556Z] Genre: 未知
+[2026-03-16T17:54:06.557Z] Intro: 
+[2026-03-16T17:54:06.559Z] Original words: 1465
+[2026-03-16T17:54:06.560Z] Need AI completion (target: 1500 words)
+[2026-03-16T17:54:33.757Z] AI completed: 952 words
+[2026-03-16T17:54:33.759Z] Total words: 952
+[2026-03-16T17:54:33.760Z] Story type: 短篇
+[2026-03-16T17:54:33.762Z] Subplot generated: {
+  "title": "就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 952,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:54:33.762Z",
+  "status": "未完结"
+}
+[2026-03-16T17:54:33.770Z] Updated existing novel 就在那个夏天水行路转我来来回回的仿佛跑到了世界的尽头
+[2026-03-16T17:54:33.773Z] Added novel 就在那个夏天水行路转我来来回回的仿佛跑到了世界的尽头 with 1 chapters
+[2026-03-16T17:54:33.775Z] Processed and saved 就在那个夏天，水行路转，我来来回回的，仿佛跑到了世界的尽头。 successfully
+[2026-03-16T17:54:33.777Z] Processing: novel-纯白的立交桥下-start.txt
+[2026-03-16T17:54:33.778Z] Title: 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。
+[2026-03-16T17:54:33.779Z] Genre: 未知
+[2026-03-16T17:54:33.782Z] Intro: 
+[2026-03-16T17:54:33.783Z] Original words: 641
+[2026-03-16T17:54:33.785Z] Need AI completion (target: 1500 words)
+[2026-03-16T17:54:43.978Z] AI completed: 779 words
+[2026-03-16T17:54:43.979Z] Total words: 779
+[2026-03-16T17:54:43.981Z] Story type: 短篇
+[2026-03-16T17:54:43.982Z] Subplot generated: {
+  "title": "人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。",
+  "genre": "未知",
+  "type": "短篇",
+  "totalWords": 779,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:54:43.982Z",
+  "status": "未完结"
+}
+[2026-03-16T17:54:43.988Z] Updated existing novel 人群逐渐拥挤起来随着红绿灯开闸放水终于恢复到以往空荡荡的模样
+[2026-03-16T17:54:43.991Z] Added novel 人群逐渐拥挤起来随着红绿灯开闸放水终于恢复到以往空荡荡的模样 with 1 chapters
+[2026-03-16T17:54:43.992Z] Processed and saved 人群逐渐拥挤起来，随着红绿灯开闸放水，终于恢复到以往空荡荡的模样。 successfully
+[2026-03-16T17:54:43.994Z] Processing: novel-雪燕-start.txt
+[2026-03-16T17:54:43.996Z] Title: 雪燕：
+[2026-03-16T17:54:43.997Z] Genre: 未知
+[2026-03-16T17:54:43.998Z] Intro: 
+[2026-03-16T17:54:44.000Z] Original words: 5688
+[2026-03-16T17:54:44.002Z] Split into 1 chapters
+[2026-03-16T17:54:44.003Z] Total words: 5688
+[2026-03-16T17:54:44.004Z] Story type: 中篇
+[2026-03-16T17:54:44.005Z] Subplot generated: {
+  "title": "雪燕：",
+  "genre": "未知",
+  "type": "中篇",
+  "totalWords": 5688,
+  "chapters": 1,
+  "mainThemes": [
+    "成长",
+    "探索",
+    "情感"
+  ],
+  "possibleEndings": [
+    "圆满结局",
+    "开放式结局",
+    "悲剧结局"
+  ],
+  "generatedAt": "2026-03-16T17:54:44.005Z",
+  "status": "未完结"
+}
+[2026-03-16T17:54:44.010Z] Updated existing novel 雪燕
+[2026-03-16T17:54:44.015Z] Added novel 雪燕 with 1 chapters
+[2026-03-16T17:54:44.016Z] Processed and saved 雪燕： successfully
+[2026-03-16T17:54:44.017Z] === Novel Processor Finished ===
